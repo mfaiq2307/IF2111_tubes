@@ -79,14 +79,14 @@ Queue CopyQueue (Queue Q) {
     if (!IsEmpty(Q)) {
         int tail = Head(Q);
         while (Length(baru) != Length(Q)) {
-            Push(&baru, NoPelanggan(InfoTail(Q)),ListKomponen(InfoTail(Q)),Harga(InfoTail(Q)));
+            Enqueue(&baru, NoPelanggan(InfoTail(Q)),ListKomponen(InfoTail(Q)),Harga(InfoTail(Q)));
             tail = (tail + 1) % MaxOrder(Q);
         }
     }
     return baru;
 }
 
-void Order(Queue *Q) {
+void Order (Queue *Q) {
     int num = (rand() % 7); /* Mengambil random nomor pemain */
     int price;
     int i; /* indeks pada list komponen */
@@ -96,8 +96,7 @@ void Order(Queue *Q) {
         kompo[i]= (rand() % 3);
     }
     Item k;
-    Kompn(k)=kompo; /* Assign list komponen menjadi elemen tipe Item */
-    Enqueue(&(*Q),num,k,price);
-
+    Kompn(k)=kompo;  /* Assign list komponen menjadi elemen tipe Item */
+    Enqueue(Q,num,k,price);
 }
 

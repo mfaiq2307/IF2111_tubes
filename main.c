@@ -16,7 +16,7 @@ int main(void)
 {
     int Start; /* bisa diganti pilihan */
     printf("1. Start Game Game \n");
-    printf("2. Load Game \n");
+    printf("2. Load Game \n")
     printf("Press 1 or 2 to Pick.\n");
     scanf("%d",Start);
 
@@ -28,7 +28,7 @@ int main(void)
         Initialisasi Kondisi Awal Game*/
         status_t Status;
         Status.Uang = 10000;
-        Status.Lokasi = 0; /*base*/
+        Status.Lokasi = 0 /*base*/
 
         /* Baris kode buat ngebangkitin order*/
         /* Baris kode buat nyimpen detail order pertama di 
@@ -53,6 +53,10 @@ int main(void)
         for (int i=0;i<NBangunan;i++){
             /*Kode buat masukin tiap bangunan ke ADT Point */
         }
+        /* Pembuatan Queue dengan panjang max */
+        int max=15;
+        Queue Q;
+        Q = CreateQueue(max);
 
         /*Baris kode buat bikin Map */
 
@@ -93,6 +97,7 @@ int main(void)
             else if(IsKataSama(Command.TabKata,"END_DAY")){
 
                 /* code */
+                Order(&Q);
             }
             else if(IsKataSama(Command.TabKata,"SAVE")){
                 /* code */
