@@ -66,7 +66,7 @@ int main(void)
         printf("ENTER COMMAND: ");
         SalinKata_Input(&Command);
 
-        while (!IsKataSama(Command.TabKata,"MOVE")){
+        while (!IsKataSama(Command.TabKata,"EXIT")){
             if(IsKataSama(Command.TabKata,"MOVE")){
                 /* code */
             }
