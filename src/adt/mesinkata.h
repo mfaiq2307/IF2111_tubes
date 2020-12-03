@@ -40,4 +40,6 @@ CC adalah karakter sesudah karakter terakhir yang diakuisisi */
 void SalinKata_Input(Kata *CKata);
 
 boolean IsStringSama(char* string1, char* string2);
+
+void SalinKata_Item(); 
 #endif 
