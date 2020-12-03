@@ -37,7 +37,7 @@ F.S.: CKata berisi kata yang sudah diakuisisi;
 CC = BLANK atau CC = MARK;  
 CC adalah karakter sesudah karakter terakhir yang diakuisisi */ 
 
-void SalinKata_Input(Kata *CKata, char *command);
+void SalinKata_Input(Kata *CKata);
 
-boolean IsKataSama(Kata string1, Kata string2);
+boolean IsStringSama(char* string1, char* string2);
 #endif 
