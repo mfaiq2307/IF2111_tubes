@@ -10,16 +10,10 @@ void order(Queue *Q) {
     kompo=(int *) malloc(8*(sizeof(int)));
     for(i=0;i<8;i++){
         kompo[i]= (rand() % 3);
-    }
 
+    }
     Item k;
     Kompn(k)=kompo
-
-    Push(&(*Q), )
-
-
-    
-
-
+    Push(&(*Q),num,k,price)
 
 }
