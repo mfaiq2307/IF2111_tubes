@@ -21,7 +21,7 @@ int main(void)
     scanf("%d",Start);
 
     if (Start == 1){
-        STARTKATA_File("Konfigurasi.txt");
+        STARTKATA_File("data/config.txt");
         /*Pembangunan Peta berdasarkan Konfigurasi */
         
         /* Deklarasi Status &
