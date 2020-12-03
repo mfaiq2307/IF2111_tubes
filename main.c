@@ -15,7 +15,7 @@ int main(void)
 {
     int Start; /* bisa diganti pilihan */
     printf("1. Start Game Game \n");
-    printf("2. Load Game \n")
+    printf("2. Load Game \n");
     printf("Press 1 or 2 to Pick.\n");
     scanf("%d",Start);
 
@@ -27,7 +27,7 @@ int main(void)
         Initialisasi Kondisi Awal Game*/
         status_t Status;
         Status.Uang = 10000;
-        Status.Lokasi = 0 /*base*/
+        Status.Lokasi = 0; /*base*/
 
         /* Baris kode buat ngebangkitin order*/
         /* Baris kode buat nyimpen detail order pertama di 
