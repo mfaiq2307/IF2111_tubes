@@ -16,7 +16,7 @@ int main(void)
 {
     int Start; /* bisa diganti pilihan */
     printf("1. Start Game Game \n");
-    printf("2. Load Game \n")
+    printf("2. Load Game \n");
     printf("Press 1 or 2 to Pick.\n");
     scanf("%d",Start);
 
@@ -28,7 +28,7 @@ int main(void)
         Initialisasi Kondisi Awal Game*/
         status_t Status;
         Status.Uang = 10000;
-        Status.Lokasi = 0 /*base*/
+        Status.Lokasi = 0;/*base*/
 
         /* Baris kode buat ngebangkitin order*/
         /* Baris kode buat nyimpen detail order pertama di 
@@ -64,9 +64,9 @@ int main(void)
 
         Kata Command;
         printf("ENTER COMMAND: ");
-        SalinKata_Input(Command.TabKata);
+        SalinKata_Input(&Command);
 
-        while (Command.TabKata != "EXIT"){
+        while (!IsKataSama(Command.TabKata,"MOVE")){
             if(IsKataSama(Command.TabKata,"MOVE")){
                 /* code */
             }
@@ -104,13 +104,10 @@ int main(void)
             }
             else if(IsKataSama(Command.TabKata,"MAP")){
                 /* code */
-            }     
-        }
+            }
             printf("ENTER COMMAND: ");
-            gets(Command.TabKata);
+            SalinKata_Input(&Command);     
         }
-
-
     }
-
 }
+
