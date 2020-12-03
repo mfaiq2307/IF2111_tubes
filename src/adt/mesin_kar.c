@@ -56,6 +56,11 @@ F.S. : Menegmbalikan true jika pita telah selesai terbaca, false jika sebaliknya
     return (CC == MARK);
 }
 
-boolean ADV_Input(){
-    
+char READ_Input(){
+    int c;
+    char cc;
+    if ((c = fgetc(stdin)) != EOF){
+        cc = (char)fgetc(stdin);
+    }
+    return cc;
 }
