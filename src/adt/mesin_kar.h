@@ -43,4 +43,7 @@ I.S. : Pita telah terbaca
 F.S. : Menegmbalikan true jika pita telah selesai terbaca, false jika sebaliknya
 */
 
+char READ_Input();
+
+
 #endif
