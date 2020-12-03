@@ -3,8 +3,8 @@
 #include <string.h>
 
 /*include include file ADT */
-#include "mesinkata.h"
-#include "circular_queue.h"
+#include "adt/mesinkata.h"
+#include "adt/circular_queue.h"
 
 typedef struct {
     int Uang;
