@@ -12,6 +12,12 @@ void order(Queue *Q) {
         kompo[i]= (rand() % 3);
     }
 
+    Item k;
+    Kompn(k)=kompo
+
+    Push(&(*Q), )
+
+
     
 
 
