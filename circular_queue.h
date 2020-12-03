@@ -90,4 +90,9 @@ Queue CopyQueue (Queue Q);
 /* F.S. Queue baru dengan nilai isi antrean sama seperti Q;
         HEAD pada Queue baru dimulai dari 0 */
 
+void Order (Queue *Q);
+/* Proses : Menambahkan pesanan dengan elemen info yang dibangkitkan secara random*/
+/* I.S. Q mungkin kosong */
+/* F.S. Queue baru dengan  tambahan satu pesanan */
+
 #endif
