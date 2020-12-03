@@ -98,3 +98,24 @@ boolean IsStringSama(char* string1, char* string2){
 
     return sama;
 }
+
+void SalinKata_Item() { 
+/* Mengakuisisi kata, menyimpan dalam CKata 
+I.S.: CC adalah karakter pertama dari kata 
+F.S.: CKata berisi kata yang sudah diakuisisi;  
+CC = BLANK atau CC = MARK;  
+CC adalah karakter sesudah karakter terakhir yang  
+diakuisisi */ 
+/* Kamus Lokal */ 
+    int i; /* definisi */ 
+    /* Algoritma*/ 
+    i = 0; /* inisialisasi */ 
+    while ((CC != MARK) && (CC != ',')) {
+        /*printf("%c",CC);*/
+        CKata.TabKata[i] = CC;
+        /*printf("masuk%c",CKata.TabKata[i]);*/ 
+        ADV_File(); 
+        i++; 
+    } /* CC = MARK or CC = BLANK */ 
+    CKata.Length = i; 
+}
