@@ -70,21 +70,31 @@ diakuisisi */
     CKata.Length = i; 
 }
 
-void SalinKata_Input(Kata *CKata, char *command){
-       
+void SalinKata_Input(Kata *CKata){
+    char command[NMax];
+    int c;
+    int i = 0;
+    while (((c = (char)fgetc(stdin)) != '\n') && (i < NMax)){
+        command[i] = c;
+        i++;
+    }
+    CKata->TabKata[i] = '\0'; 
+    CKata->Length = i;
+    int j = 0;
+    while (j < NMax){
+        CKata->TabKata[j] = command[j];
+        j++;
+    }
 }
 boolean IsStringSama(char* string1, char* string2){
+    int i = 0;
     boolean sama = true;
-    if (string1.Length == string2.Length){
-        int i = 0;
-        while ((i < string1.Length) && sama){
-            if ((string1.TabKata[i]) != (string2.TabKata[i])){
-                sama = false;
-            }
-            i++;
+    while((string1[i] != '\0') && (string2[i] != '\0') && (sama)){
+        if(string1[i] != string2[i]){
+            sama = false;
         }
-    }else{
-        sama = false;
+        i++;
     }
+
     return sama;
 }
