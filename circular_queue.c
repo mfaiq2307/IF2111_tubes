@@ -37,7 +37,7 @@ void DeleteQueue (Queue * Q) {
 }
 
 /* *** Primitif Add/Delete *** */
-void Push (Queue * Q, int num, Item component, int price) {
+void Enqueue (Queue * Q, int num, Item component, int price) {
     /*Kamus Lokal*/
     ElType X;
     /*Algoritma*/
@@ -57,7 +57,7 @@ void Push (Queue * Q, int num, Item component, int price) {
     
     
 }
-ElType Pop (Queue * Q) {
+ElType Dequeue (Queue * Q) {
     ElType ret = InfoHead(*Q);
     Head(*Q)++;
     if (Head(*Q) == MaxOrder(*Q)) {

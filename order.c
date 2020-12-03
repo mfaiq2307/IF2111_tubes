@@ -13,7 +13,7 @@ void order(Queue *Q) {
 
     }
     Item k;
-    Kompn(k)=kompo
-    Push(&(*Q),num,k,price)
+    Kompn(k)=kompo;
+    Enqueue(&(*Q),num,k,price);
 
 }

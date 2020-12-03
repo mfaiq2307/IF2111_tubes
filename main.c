@@ -4,6 +4,7 @@
 
 /*include include file ADT */
 #include "mesinkata.h"
+#include "circular_queue.h"
 
 typedef struct {
     int Uang;
@@ -90,6 +91,7 @@ int main(void)
                 /* code */
             }
             else if(IsKataSama(Command.TabKata,"END_DAY")){
+
                 /* code */
             }
             else if(IsKataSama(Command.TabKata,"SAVE")){
