@@ -3,7 +3,7 @@
 # include "circular_queue.h"
 
 void order(Queue *Q) {
-    int num = (rand() % 7);
+    int num = (rand() % 7); /* Mengambil random nomor pemain */
     int price;
     int i;
     int *kompo;
