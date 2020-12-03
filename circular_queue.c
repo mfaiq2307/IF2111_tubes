@@ -86,7 +86,7 @@ Queue CopyQueue (Queue Q) {
     return baru;
 }
 
-void order(Queue *Q) {
+void Order(Queue *Q) {
     int num = (rand() % 7); /* Mengambil random nomor pemain */
     int price;
     int i; /* indeks pada list komponen */
@@ -94,7 +94,6 @@ void order(Queue *Q) {
     kompo=(int *) malloc(8*(sizeof(int)));
     for(i=0;i<8;i++){
         kompo[i]= (rand() % 3);
-
     }
     Item k;
     Kompn(k)=kompo; /* Assign list komponen menjadi elemen tipe Item */
