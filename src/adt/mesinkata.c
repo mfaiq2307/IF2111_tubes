@@ -140,10 +140,16 @@ Kata IntToKata(int angka){
         i++;
     }
     i--;
-    while (angka != 0){
-        temp = angka/(Pangkat(10,i));
-        string.TabKata[j] = IntToChar(temp);
-        angka = angka % (temp * Pangkat(10,i));
+    while (i != -1){
+        if(angka % Pangkat(10,i) == 0){
+            string.TabKata[j] = IntToChar(angka/Pangkat(10,i));
+            angka = 0;
+        }
+        else{
+            temp = angka/(Pangkat(10,i));
+            string.TabKata[j] = IntToChar(temp);
+            angka = angka % (temp * Pangkat(10,i));
+        }
         i--;
         j++;
     }
