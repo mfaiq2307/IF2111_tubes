@@ -93,7 +93,7 @@ int main(void)
                 CheckKomponen(Q);
             }
             else if(IsStringSama(Command.TabKata,"STARTBUILD")){
-                CreateEmpty(&S);
+                CreateEmptyStack(&S);
                 printf("Kamu telah memulai pesanan %d untuk pelanggan %d\n",nomorOrder,NoPelanggan(InfoHead(Q)));
             }
             else if(IsStringSama(Command.TabKata,"FINISHBUILD")){
@@ -112,9 +112,9 @@ int main(void)
 
             }
             else if(IsStringSama(Command.TabKata,"REMOVECOMPONENT")){
-                char X;
-                Pop(&S, &X);
-                printf("Komponen %c berhasil dicopot!\n", X);
+                char X[40];
+                Pop(&S, X);
+                printf("Komponen %s berhasil dicopot!\n", X);
             }
             else if(IsStringSama(Command.TabKata,"SHOP")){
                 /* code */

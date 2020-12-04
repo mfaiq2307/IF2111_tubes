@@ -1,8 +1,9 @@
 #include "stack.h"
+#include "mesinkata.h"
 
 /* ************ Prototype ************ */
 /* *** Konstruktor/Kreator *** */
-void CreateEmpty (Stack *S)
+void CreateEmptyStack (Stack *S)
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl */
 /* jadi indeksnya antara 0.. MaxEl-1 */
@@ -12,32 +13,32 @@ void CreateEmpty (Stack *S)
 }
 
 /* ************ Predikat Untuk test keadaan KOLEKSI ************ */
-boolean IsEmpty (Stack S)
+boolean IsStackEmpty (Stack S)
 /* Mengirim true jika Stack kosong: lihat definisi di atas */
 {
-	return (Top(S) == Nil);
+	return Top(S) == Nil;
 }
-boolean IsFull (Stack S)
+boolean IsStackFull (Stack S)
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 {
 	return Top(S) == MaxEl - 1;
 }
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void Push (Stack * S, infotype X)
+void Push (Stack *S, infotype X)
 /* Menambahkan X sebagai elemen Stack S. */
 /* I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh */
 /* F.S. X menjadi TOP yang baru,TOP bertambah 1 */
 {
 	Top(*S)++;
-	InfoTop(*S) = X;
+	CopyString(X, InfoTop(*S));
 }
 /* ************ Menghapus sebuah elemen Stack ************ */
-void Pop (Stack * S, infotype* X)
+void Pop (Stack *S, infotype X)
 /* Menghapus X dari Stack S. */
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 {
-	*X = InfoTop(*S);
+	CopyString(InfoTop(*S), X);
 	Top(*S)--;
 }
 
@@ -50,6 +51,6 @@ void PrintStack(Stack S)
 	int i;
 	for (i = 0; i < S.TOP+1; i++)
 	{
-		printf("%d. %c\n", i+1, S.T[i]);
+		printf("%d. %s\n", i+1, S.T[i]);
 	}
 }

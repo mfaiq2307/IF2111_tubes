@@ -56,4 +56,8 @@ void Clean(Kata *Kotor);
 
 void Space(Kata *Kotor);
 
+void CopyString(char *Base, char *Copycat);
+
+char* Cleanse(char* Kotor);
+
 #endif 

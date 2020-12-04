@@ -6,7 +6,7 @@
 
 #define Nil NULL
 
-typedef POINT infotype;
+typedef BANGUNAN infotype;
 typedef struct tElmtNode *addrNode;
 typedef struct tElmtConNode *addrCon;
 typedef struct tElmtNode {
