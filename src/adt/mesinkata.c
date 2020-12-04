@@ -136,7 +136,7 @@ Kata IntToKata(int angka){
     int temp;
     int i = 0;
     int j = 0;
-    while(Pangkat(10,i) < angka){
+    while(Pangkat(10,i) <= angka){
         i++;
     }
     i--;
