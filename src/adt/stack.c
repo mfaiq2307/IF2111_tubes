@@ -5,7 +5,7 @@
 void CreateEmpty (Stack *S)
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl */
-/* jadi indeksnya antara 1.. MaxEl+1 karena 0 tidak dipakai */
+/* jadi indeksnya antara 0.. MaxEl-1 */
 /* Ciri stack kosong : TOP bernilai Nil */
 {
 	Top(*S) = Nil;
@@ -20,7 +20,7 @@ boolean IsEmpty (Stack S)
 boolean IsFull (Stack S)
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 {
-	return Top(S) == MaxEl;
+	return Top(S) == MaxEl - 1;
 }
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
 void Push (Stack * S, infotype X)
