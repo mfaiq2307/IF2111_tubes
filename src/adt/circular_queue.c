@@ -94,7 +94,7 @@ void Order (Queue * Q) {
     kompo=(int *) malloc(8*(sizeof(int)));
     for(i=0;i<8;i++){ 
         kompo[i]= (rand() % 3);
-        if (i==0){  /*Mobo*/
+        if (i==0){  /*MotherBoard*/
             if (kompo[i]==0) { /*x570*/
                 price = price + 400;
             }
@@ -188,6 +188,6 @@ void Order (Queue * Q) {
     price = price + 30; /* Harga komponen ditambah upah pengerjaan */
     Item k;
     Kompn(k)=kompo;  /* Assign list komponen menjadi elemen tipe Item */
-    Enqueue(Q,num,k,price);
+    Enqueue((&Q),num,k,price);
 }
 
