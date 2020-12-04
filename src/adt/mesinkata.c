@@ -206,3 +206,10 @@ Kata IntToKata(int angka){
     }
 }
 
+void CopyString(char *Base, char *Copycat){
+    int i = 0;
+    while (Base[i] != ENDSTR){
+        Copycat[i] = Base[i];
+        i++;
+    }
+}
