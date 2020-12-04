@@ -41,5 +41,9 @@ void SalinKata_Input(Kata *CKata);
 
 boolean IsStringSama(char* string1, char* string2);
 
-void SalinKata_Item(); 
+void SalinKata_Item();
+
+int KataToInt(Kata String);
+
+Kata IntToKata(int angka);
 #endif 
