@@ -119,3 +119,39 @@ diakuisisi */
     } /* CC = MARK or CC = BLANK */ 
     CKata.Length = i; 
 }
+
+int KataToInt(Kata String){
+    int angka = 0;
+    int i = String.Length;
+    int j = 0;
+    while (j < i){
+        angka = CharToInt(String.TabKata[j]) + (10 * angka);
+        j++;
+    }
+    return angka;
+}
+
+Kata IntToKata(int angka){
+    Kata string;
+    int temp;
+    int i = 0;
+    int j = 0;
+    while(Pangkat(10,i) < angka){
+        i++;
+    }
+    i--;
+    while (angka != 0){
+        temp = angka/(Pangkat(10,i));
+        string.TabKata[j] = IntToChar(temp);
+        angka = angka % (temp * Pangkat(10,i));
+        i--;
+        j++;
+    }
+    string.TabKata[j] = '\0';
+    string.Length = j;
+
+    return string;
+
+
+}
+
