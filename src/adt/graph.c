@@ -36,7 +36,7 @@ void DealokCon(addrCon *Pt)
 }
 addrNode SearchNode(Graph G, POINT P)
 {
-
+    
 }
 
 addrCon SearchEdge(Graph G, POINT P1, POINT P2)
@@ -53,3 +53,21 @@ void InsertEdge(Graph G, POINT P1, POINT P2)
 {
 
 }
+
+/* ADT TAMBAHAN UNTUK KEPERLUAN GAME
+baca map.txt, trus liat disitu, kalo dia 1 berarti dia nanti dihubungin sama jalan
+ini belum di test, masih kasarnya aja
+
+void ConvertMapToGraph (Matriks M, Graph *G){ 
+    for (int i = BarisPertama; i <= BarisTerakhir; i++)
+    {
+        for (int j = KolomPertama; j <= KolomTerakhir; j++)
+        {
+            if (Elmt(M, i, j) == 1)
+            {
+                InsertEdge();
+            }
+        }
+    }
+}
+/*
