@@ -194,6 +194,7 @@ void Order (Queue * Q) {
 void CheckKomponen(Queue Q){
     int *komponen = Kompn(ListKomponen(InfoHead(Q)));
     int i;
+    printf("Komponen:")
     for(i=0;i<8;i++){ 
         if (i==0){  /*MotherBoard*/
             if (komponen[i]==0) { /*x570*/
