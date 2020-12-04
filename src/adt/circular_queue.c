@@ -1,4 +1,5 @@
-#include<stdlib.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "circular_queue.h"
 
 /* ********* Prototype ********* */
@@ -188,7 +189,7 @@ void Order (Queue * Q) {
     price = price + 30; /* Harga komponen ditambah upah pengerjaan */
     Item k;
     Kompn(k)=kompo;  /* Assign list komponen menjadi elemen tipe Item */
-    Enqueue((&Q),num,k,price);
+    Enqueue(Q,num,k,price);
 }
 
 void CheckKomponen(Queue Q){
