@@ -151,7 +151,5 @@ Kata IntToKata(int angka){
     string.Length = j;
 
     return string;
-
-
 }
 
