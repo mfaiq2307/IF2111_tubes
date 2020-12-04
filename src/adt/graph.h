@@ -2,15 +2,11 @@
 #define graph_H
 
 #include "boolean.h"
-
+#include "point.h"
 
 #define Nil NULL
 
-typedef struct {
-    int X;
-    int Y;
-} Point;
-typedef Point infotype;
+typedef POINT infotype;
 typedef struct tElmtNode *addrNode;
 typedef struct tElmtConNode *addrCon;
 typedef struct tElmtNode {
@@ -35,6 +31,26 @@ typedef struct {
 #define Connect(G) (G)->Connect
 #define NextC(G) (G)->NextCon
 
-Point MakePoint(int X, int Y);
+/*Selektor Point.Bangunan */
+#define Lokasi(P) ((P).Lokasi)
+#define Simbol(P) ((P).CSimbol)
 
-void CreateGraph()
+void CreateGraph(POINT P);
+
+addrNode AlokNode(POINT P);
+
+addrCon AlokCon(addrNode Pn);
+
+void DealokNode(addrNode Pn);
+
+void DealokCon(addrCon Pt);
+
+addrNode SearchNode(Graph G, POINT P);
+
+addrCon SearchEdge(Graph G, POINT P1, POINT P2);
+
+void InsertNode(Graph G, POINT P);
+
+void InsertEdge(Graph G, POINT P1, POINT P2);
+
+#endif
