@@ -45,5 +45,12 @@ F.S. : Menegmbalikan true jika pita telah selesai terbaca, false jika sebaliknya
 
 char READ_Input();
 
+char ADV_Item();
+
+char IntToChar(int angka);
+
+int CharToInt(char c);
+
+int Pangkat(int asli, int exponen);
 
 #endif
