@@ -33,12 +33,12 @@ void Push (Stack *S, infotype X)
 	CopyString(X, InfoTop(*S));
 }
 /* ************ Menghapus sebuah elemen Stack ************ */
-void Pop (Stack *S, infotype *X)
+void Pop (Stack *S, infotype X)
 /* Menghapus X dari Stack S. */
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 {
-	CopyString(InfoTop(*S), X[40]);
+	CopyString(InfoTop(*S), X);
 	Top(*S)--;
 }
 

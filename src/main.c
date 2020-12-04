@@ -108,7 +108,7 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"REMOVECOMPONENT")){
                 char X[40];
-                Pop(&S, &X);
+                Pop(&S, X);
                 printf("Komponen %s berhasil dicopot!\n", X);
             }
             else if(IsStringSama(Command.TabKata,"SHOP")){
