@@ -14,11 +14,11 @@ typedef int address;   /* indeks tabel */
 /* Contoh deklarasi variabel bertype stack dengan ciri TOP : */
 /* Versi I : dengan menyimpan tabel dan alamat top secara eksplisit*/
 typedef struct {
-  infotype T[MaxEl+1]; /* tabel penyimpan elemen */
+  infotype T[MaxEl]; /* tabel penyimpan elemen */
   address TOP;  /* alamat TOP: elemen puncak */
 } Stack;
 /* Definisi stack S kosong : S.TOP = Nil */
-/* Elemen yang dipakai menyimpan nilai Stack T[1]..T[MaxEl] */
+/* Elemen yang dipakai menyimpan nilai Stack T[0]..T[MaxEl] */
 /* Jika S adalah Stack maka akses elemen : */
    /* S.T[(S.TOP)] untuk mengakses elemen TOP */
    /* S.TOP adalah alamat elemen TOP */
