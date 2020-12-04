@@ -36,9 +36,9 @@ typedef struct {
 #define Simbol(P) ((P).Simbol)
 #define First(L) ((L).First)
 
-void CreateGraph(POINT P, Graph *G);
+void CreateGraph(Graph *G);
 
-addrNode AlokNode(POINT P);
+addrNode AlokNode(int x, int y,char Sym);
 
 addrCon AlokCon(addrNode Pn);
 
@@ -50,8 +50,7 @@ addrNode SearchNode(Graph G, int x, int y);
 
 addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2);
 
-void InsertNode(Graph G, int x, int y);
+void InsertNode(Graph G, int x, int y,char sym);
 
-void InsertEdge(Graph G, int x1, int y1, int x2, int y2);
-
+void InsertEdge(Graph G, int x1, int y1, char sym1, int x2, int y2,char sym2);
 #endif
