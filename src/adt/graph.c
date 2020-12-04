@@ -30,7 +30,7 @@ void DealokNode(addrNode *Pn)
 {
     free(*Pn);
 }
-void DealokCon(addrCon *Pt);
+void DealokCon(addrCon *Pt)
 {
     free(*Pt);
 }
@@ -39,8 +39,17 @@ addrNode SearchNode(Graph G, POINT P)
 
 }
 
-addrCon SearchEdge(Graph G, POINT P1, POINT P2);
+addrCon SearchEdge(Graph G, POINT P1, POINT P2)
+{
 
-void InsertNode(Graph G, POINT P);
+}
 
-void InsertEdge(Graph G, POINT P1, POINT P2);
+void InsertNode(Graph G, POINT P)
+{
+
+}
+
+void InsertEdge(Graph G, POINT P1, POINT P2)
+{
+
+}

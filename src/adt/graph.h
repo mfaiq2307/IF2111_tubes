@@ -42,9 +42,9 @@ addrNode AlokNode(POINT P);
 
 addrCon AlokCon(addrNode Pn);
 
-void DealokNode(addrNode Pn);
+void DealokNode(addrNode *Pn);
 
-void DealokCon(addrCon Pt);
+void DealokCon(addrCon *Pt);
 
 addrNode SearchNode(Graph G, POINT P);
 
