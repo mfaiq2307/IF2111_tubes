@@ -66,43 +66,43 @@ int main(void)
         printf("ENTER COMMAND: ");
         SalinKata_Input(&Command);
 
-        while (!IsKataSama(Command.TabKata,"EXIT")){
-            if(IsKataSama(Command.TabKata,"MOVE")){
+        while (!IsStringSama(Command.TabKata,"EXIT")){
+            if(IsStringSama(Command.TabKata,"MOVE")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"STATUS")){
+            else if(IsStringSama(Command.TabKata,"STATUS")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"CHECKORDER")){
+            else if(IsStringSama(Command.TabKata,"CHECKORDER")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"STARTBUILD")){
+            else if(IsStringSama(Command.TabKata,"STARTBUILD")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"FINISHBUILD")){
+            else if(IsStringSama(Command.TabKata,"FINISHBUILD")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"ADDCOMPONENT")){
+            else if(IsStringSama(Command.TabKata,"ADDCOMPONENT")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"REMOVECOMPONENT")){
+            else if(IsStringSama(Command.TabKata,"REMOVECOMPONENT")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"SHOP")){
+            else if(IsStringSama(Command.TabKata,"SHOP")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"DELIVER")){
+            else if(IsStringSama(Command.TabKata,"DELIVER")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"END_DAY")){
+            else if(IsStringSama(Command.TabKata,"END_DAY")){
 
                 /* code */
                 Order(&Q);
             }
-            else if(IsKataSama(Command.TabKata,"SAVE")){
+            else if(IsStringSama(Command.TabKata,"SAVE")){
                 /* code */
             }
-            else if(IsKataSama(Command.TabKata,"MAP")){
+            else if(IsStringSama(Command.TabKata,"MAP")){
                 /* code */
             }
             printf("ENTER COMMAND: ");
