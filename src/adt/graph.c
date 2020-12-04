@@ -124,23 +124,24 @@ void InsertEdge(Graph G, int x1, int y1, char sym1, int x2, int y2,char sym2)
     addrCon C1,C2;
     addrNode P1,P2;
     if ((SearchNode(G,x1,y1) != Nil) && ((SearchNode(G,x2,y2)) != Nil)){
-        P1 = SearchNode(G,x1,y1);
-        P2 = SearchNode(G,x2,y2);
+
     }else{
-        P1 = InsertNode(G,x1,y1,sym1);
-        P2 = InsertNode(G,x2,y2,sym2);
+        InsertNode(G,x1,y1,sym1);
+        InsertNode(G,x2,y2,sym2);
     }
+    P1 = SearchNode(G,x1,y1);
+    P2 = SearchNode(G,x2,y2);
     C2 = AlokCon(P1);
     C1 = AlokCon(P2);
     S1 = Hub(P1);
     while(S1 != Nil){
         S1 = NextC(S1);
     }
-    Next(S1) = C1;
+    NextC(S1) = C1;
     while(S2 != Nil){
         S2 = NextC(S2);
     }
-    Next(S2) = C2;
+    NextC(S2) = C2;
 }
 
 /* ADT TAMBAHAN UNTUK KEPERLUAN GAME */
