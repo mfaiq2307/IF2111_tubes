@@ -88,7 +88,7 @@ int main(void)
                 CheckKomponen(Q);
             }
             else if(IsStringSama(Command.TabKata,"STARTBUILD")){
-                CreateEmpty(&S);
+                CreateEmptyStack(&S);
                 printf("Kamu telah memulai pesanan %d untuk pelanggan %d\n",nomorOrder,NoPelanggan(InfoHead(Q)));
             }
             else if(IsStringSama(Command.TabKata,"FINISHBUILD")){
