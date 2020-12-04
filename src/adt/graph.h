@@ -6,7 +6,11 @@
 
 #define Nil NULL
 
-typedef int infotype;
+typedef struct {
+    int X;
+    int Y;
+} Point;
+typedef Point infotype;
 typedef struct tElmtNode *addrNode;
 typedef struct tElmtConNode *addrCon;
 typedef struct tElmtNode {
@@ -31,3 +35,6 @@ typedef struct {
 #define Connect(G) (G)->Connect
 #define NextC(G) (G)->NextCon
 
+Point MakePoint(int X, int Y);
+
+void CreateGraph()
