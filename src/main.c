@@ -5,6 +5,7 @@
 /*include include file ADT */
 #include "adt/mesinkata.h"
 #include "adt/circular_queue.h"
+#include "adt/stack.h"
 
 typedef struct {
     int Uang;
@@ -60,6 +61,9 @@ int main(void)
         Q = CreateQueue(max);
         Order(&Q); /*Inisialisasi Order*/
 
+        /* Deklarasi Stack */
+        Stack S;
+
         /*Baris kode buat bikin Map */
 
         /* Baris kode buat ngebangkitin order*/
@@ -84,7 +88,7 @@ int main(void)
                 CheckKomponen(Q);
             }
             else if(IsStringSama(Command.TabKata,"STARTBUILD")){
-                /* code */
+                CreateEmpty(&S);
                 printf("Kamu telah memulai pesanan %d untuk pelanggan %d\n",nomorOrder,NoPelanggan(InfoHead(Q)));
             }
             else if(IsStringSama(Command.TabKata,"FINISHBUILD")){
@@ -97,10 +101,15 @@ int main(void)
 
             }
             else if(IsStringSama(Command.TabKata,"ADDCOMPONENT")){
-                /* code */
+                printf("Komponen yang telah terpasang: \n");
+                PrintStack(S);
+                printf("Komponen yang tersedia: \n");
+
             }
             else if(IsStringSama(Command.TabKata,"REMOVECOMPONENT")){
-                /* code */
+                char X;
+                Pop(&S, &X);
+                printf("Komponen %c berhasil dicopot!\n", X);
             }
             else if(IsStringSama(Command.TabKata,"SHOP")){
                 /* code */

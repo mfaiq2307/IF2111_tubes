@@ -40,3 +40,12 @@ void Pop (Stack * S, infotype* X)
 	*X = InfoTop(*S);
 	Top(*S)--;
 }
+
+void PrintStack(Stack S)
+{
+	int i;
+	for (i = 0; i < 8; i++)
+	{
+		printf("%d. %c\n", i+1, S.T[i]);
+	}
+}
