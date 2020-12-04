@@ -191,3 +191,100 @@ void Order (Queue * Q) {
     Enqueue((&Q),num,k,price);
 }
 
+void CheckKomponen(Queue Q){
+    int *komponen = Kompn(ListKomponen(InfoHead(Q)));
+    int i;
+    for(i=0;i<8;i++){ 
+        if (i==0){  /*MotherBoard*/
+            if (komponen[i]==0) { /*x570*/
+                printf("1. ROG X570");
+            }
+            else if (komponen[i]==1){ /*b550*/
+                printf("1. TUF B550");
+            }
+            else { /*a320*/
+                printf("1. ASUS A320");
+            }
+        }
+        if (i==1){ /*CPU*/
+            if (komponen[i]==0) {/* ryzen 7*/
+                printf("2. AMD Ryzen 7");
+            }
+            else if (komponen[i]==1){/* ryzen 5*/
+                printf("2. AMD Ryzen 5");
+            }
+            else { /* ryzen 3 */
+                printf("2. AMD Ryzen 3");
+            }
+        }
+        if (i==2){ /*RAM*/
+            if (komponen[i]==0) { /*2x16 Gb*/
+                printf("3. Kingston HyperX Fury 2x16 GB");
+            }
+            else if (komponen[i]==1){ /*2x8 GB*/
+                printf("3. Kingston HyperX 2x8 GB");
+            }
+            else { /*2x4 GB */
+                printf("3. Kingston 2x4 GB");
+            }
+        }
+        if (i==3){ /*CPU Cooler */
+            if (komponen[i]==0) { /*AIO Watercooling*/
+                printf("4. Noctua AIO Watercooling");
+            }
+            else if (komponen[i]==1){ /*High-profile Aircooling */
+                printf("4. Noctua High-profile Aircooling");
+            }
+            else { /* Low-profile Aircooling */
+                printf("4. Noctua Low-profile Aircooling");
+            }
+        }
+        if (i==4){ /*Casing*/
+            if (komponen[i]==0) { /*Tower*/
+                printf("5. SilverStone Tower");
+            }
+            else if (komponen[i]==1){ /*MTX*/
+                printf("5. SilverStone MTX");
+            }
+            else { /*ITX*/
+                printf("5. SilverStone ITX");
+            }
+        }
+        if (i==5){ /*GPU*/
+            if (komponen[i]==5) { /*RTX*/
+                printf("6. Nvidia RTX 2060");
+            }
+            else if (komponen[i]==1){ /*GTX*/
+                printf("6. Nvidia GTX 1050Ti");
+            }
+            else { /*GT*/
+                printf("6. Nvidia GTX 750");
+            }
+        }
+        if (i==6){ /*Storage*/
+            if (komponen[i]==0) { /*NVME SSD 512 GB*/
+                printf("7. WD Black NVME SSD 512GB");
+            }
+            else if (komponen[i]==1){ /*SATA SSD 512 GB*/
+                printf("7. WD Green SATA SSD 512GB");
+            }
+            else { /* SATA HDD 1 TB*/
+                printf("7. WD Blue SATA HDD 1TB");
+            }
+        }
+        if (i==7){ /*PSU*/
+            if (komponen[i]==0) { /*Gold Efficiency*/
+                printf("8. Corsair 850W Gold Efficiency");
+            }
+            else if (komponen[i]==1){ /*Silver Efficiency*/
+                printf("8. Corsair 650W Silver Efficiency");
+            }
+            else { /* Bronze Efficiency*/
+                printf("8. Corsair 450W Bronze Efficiency");
+            }
+        }
+        
+
+    }
+}
+

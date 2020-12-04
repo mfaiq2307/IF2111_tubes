@@ -95,4 +95,9 @@ void Order (Queue *Q);
 /* I.S. Q mungkin kosong */
 /* F.S. Queue baru dengan  tambahan satu pesanan */
 
+void CheckKomponen (Queue Q);
+/* Proses : Menampilkan komponen-komponen yang terdapat dalam array of integer yang terdapat dalam Head Q */
+/* I.S. Q tidak kosong */
+
+
 #endif
