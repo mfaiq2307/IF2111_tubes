@@ -17,7 +17,7 @@ typedef struct {
 
 typedef struct {
    POINT Lokasi;   
-   char CSimbol;
+   char Simbol;
 } BANGUNAN;
 
 typedef struct {

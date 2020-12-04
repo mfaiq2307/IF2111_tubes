@@ -33,9 +33,10 @@ typedef struct {
 
 /*Selektor Point.Bangunan */
 #define Lokasi(P) ((P).Lokasi)
-#define Simbol(P) ((P).CSimbol)
+#define Simbol(P) ((P).Simbol)
+#define First(L) ((L).First)
 
-void CreateGraph(POINT P);
+void CreateGraph(POINT P, Graph *G);
 
 addrNode AlokNode(POINT P);
 
