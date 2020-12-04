@@ -8,45 +8,10 @@ void main(){
     Queue Q;
     int nomorOrder=1; /* Nomor Order */
     Q = CreateQueue(max);
-    Order(&Q); /*Inisialisasi Order*/
     printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
     printf("Invoice : $%d\n",Harga(InfoHead(Q)));
     CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
-    Dequeue(&Q);
-    Order(&Q);
-    printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
-    printf("Invoice : $%d\n",Harga(InfoHead(Q)));
-    CheckKomponen(Q);
+    
 
 
 
