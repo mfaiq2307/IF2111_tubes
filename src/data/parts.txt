@@ -1,4 +1,4 @@
-komponen,harga,jenis
+parts,harga,jenis
 ROG"X570,400,Motherboard
 TUF"B550,250,Motherboard
 ASUS"A320,150,Motherboard
@@ -14,12 +14,12 @@ Noctua"Low-profile"Aircooling,25,CPU"Cooler
 SilverStone"Tower,100,Case
 SilverStone"MTX,100,Case
 SilverStone"ITX,100,Case
-Nvidia"RTX"2060,300
-Nvidia"GTX"1050Ti,100
-Nvidia"GTX"750,30
-WD"Black"NVME"SSD"512GB,80
-WD"Green"SATA"SSD"512GB,60
-WD"Blue"SATA"HDD"1TB,40
-Corsair"850W"Gold"Efficiency,80
-Corsair"650W"Silver"Efficiency,60
-Corsair"450W"Bronze"Efficiency,40.
+Nvidia"RTX"2060,300,GPU
+Nvidia"GTX"1050Ti,100,GPU
+Nvidia"GTX"750,30,GPU
+WD"Black"NVME"SSD"512GB,80,Storage
+WD"Green"SATA"SSD"512GB,60,Storage
+WD"Blue"SATA"HDD"1TB,40,Storage
+Corsair"850W"Gold"Efficiency,80,PSU
+Corsair"650W"Silver"Efficiency,60,PSU
+Corsair"450W"Bronze"Efficiency,40,PSU.
