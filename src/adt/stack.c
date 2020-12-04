@@ -1,4 +1,5 @@
 #include "stack.h"
+#include "mesinkata.h"
 
 /* ************ Prototype ************ */
 /* *** Konstruktor/Kreator *** */
@@ -29,7 +30,7 @@ void Push (Stack *S, infotype X)
 /* F.S. X menjadi TOP yang baru,TOP bertambah 1 */
 {
 	Top(*S)++;
-	InfoTop(*S) = X;
+	CopyString(X, InfoTop(*S));
 }
 /* ************ Menghapus sebuah elemen Stack ************ */
 void Pop (Stack *S, infotype *X)
@@ -37,7 +38,7 @@ void Pop (Stack *S, infotype *X)
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 {
-	*X = InfoTop(*S);
+	CopyString(InfoTop(*S), X[40]);
 	Top(*S)--;
 }
 
@@ -50,6 +51,6 @@ void PrintStack(Stack S)
 	int i;
 	for (i = 0; i < S.TOP+1; i++)
 	{
-		printf("%d. %c\n", i+1, S.T[i]);
+		printf("%d. %s\n", i+1, S.T[i]);
 	}
 }

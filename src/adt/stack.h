@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "boolean.h"
 
-#define Nil NULL
+#define Nil -1
 #define MaxEl 8
 /* Nil adalah stack dengan elemen kosong . */
 
@@ -21,6 +21,7 @@ typedef struct {
   infotype T[MaxEl]; /* tabel penyimpan elemen */
   address TOP;  /* alamat TOP: elemen puncak */
 } Stack;
+
 /* Definisi stack S kosong : S.TOP = Nil */
 /* Elemen yang dipakai menyimpan nilai Stack T[0]..T[MaxEl-1] */
 /* Jika S adalah Stack maka akses elemen : */
