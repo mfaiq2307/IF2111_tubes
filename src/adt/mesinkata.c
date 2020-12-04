@@ -140,22 +140,30 @@ Kata IntToKata(int angka){
         i++;
     }
     i--;
-    while (i != -1){
-        if(angka % Pangkat(10,i) == 0){
-            string.TabKata[j] = IntToChar(angka/Pangkat(10,i));
-            angka = 0;
+    if (angka >= 0){
+        if (angka != 0){
+            while (i != -1){
+                if(angka % Pangkat(10,i) == 0){
+                    string.TabKata[j] = IntToChar(angka/Pangkat(10,i));
+                    angka = 0;
+                }
+                else{
+                    temp = angka/(Pangkat(10,i));
+                    string.TabKata[j] = IntToChar(temp);
+                    angka = angka % (temp * Pangkat(10,i));
+                }
+                i--;
+                j++;
+            }
+            string.TabKata[j] = '\0';
+            string.Length = j;
+        }else{
+            string.TabKata[j] = '0';
+            string.Length = 1;
         }
-        else{
-            temp = angka/(Pangkat(10,i));
-            string.TabKata[j] = IntToChar(temp);
-            angka = angka % (temp * Pangkat(10,i));
-        }
-        i--;
-        j++;
+        return string;
+    }else{
+        printf("Fitur belum tersedia, mohon maaf :D");
     }
-    string.TabKata[j] = '\0';
-    string.Length = j;
-
-    return string;
 }
 
