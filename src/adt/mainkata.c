@@ -8,10 +8,10 @@ int main() {
     while (!EndKata) { 
         /*for (int i=0;i<CKata.Length;i++) {
             printf("%s",CKata.TabKata);
-        }*/
-        printf("%s",CKata.TabKata); 
-        /*printf("\n");*/ 
-        ADVKATA_File(); 
+        */
+        printf("%s",CKata.TabKata); /*printf("\n");*/ 
+        ADVKATA_File();
+        printf("\n");
     } 
     return 0; 
 } 

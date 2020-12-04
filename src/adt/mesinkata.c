@@ -61,17 +61,21 @@ diakuisisi */
     /* Algoritma*/ 
     i = 0; /* inisialisasi */ 
     boolean cont = true;
-    while ((CC != MARK) && (CC != BLANK) && (cont)) {
+    CKata = Purify(CKata);
+    while ((CC != MARK) && (CC != BLANK)) {
         /*printf("%c",CC);*/
         CKata.TabKata[i] = CC;
-            /*printf("masuk%c",CKata.TabKata[i]);*/ 
+        /*printf("masuk%c",CKata.TabKata[i]);*/ 
         ADV_File();
-        if (CC == NEWLINE){
+        if ((CC == NEWLINE) || (CC == DELIMITER)){
             break;
         }
         i++; 
     } /* CC = MARK or CC = BLANK */ 
-    CKata.Length = i; 
+    CKata.Length = i;
+    Clean(&CKata);
+    Space(&CKata);
+    printf("!"); 
 }
 
 void SalinKata_Input(Kata *CKata){
@@ -101,6 +105,37 @@ boolean IsStringSama(char* string1, char* string2){
     }
 
     return sama;
+}
+
+Kata Purify(Kata Kotor){
+    int i = 0;
+    while (i < NMax){
+        Kotor.TabKata[i] = ENDSTR;
+        i++;
+    }
+    Kotor.Length = 0;
+    return Kotor;
+}
+void Clean(Kata *Kotor){
+    int i = 0;
+    if ((Kotor->TabKata[0] == DELIMITER) || (Kotor->TabKata[0] == NEWLINE)){
+        while (i < Kotor->Length){
+            Kotor->TabKata[i] = Kotor->TabKata[i+1];
+            i++;
+        }
+        Kotor->TabKata[Kotor->Length] = ENDSTR;
+        Kotor->Length = Kotor->Length - 1;
+    }
+}
+
+void Space(Kata *Kotor){
+    int i = 0;
+    while (i < Kotor->Length){
+        if (Kotor->TabKata[i] == '"'){
+            Kotor->TabKata[i] = ' ';
+        }
+        i++;
+    }
 }
 
 void SalinKata_Item() { 

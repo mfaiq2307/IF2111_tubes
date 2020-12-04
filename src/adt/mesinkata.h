@@ -6,6 +6,7 @@
 #define BLANK ' ' 
 #define NEWLINE '\n'
 #define ENDSTR '\0'
+#define DELIMITER ','
 
 typedef struct { 
 char TabKata[NMax]; 
@@ -48,4 +49,11 @@ void SalinKata_Item();
 int KataToInt(Kata String);
 
 Kata IntToKata(int angka);
+
+Kata Purify(Kata Kotor);
+
+void Clean(Kata *Kotor);
+
+void Space(Kata *Kotor);
+
 #endif 
