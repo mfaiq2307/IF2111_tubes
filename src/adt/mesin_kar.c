@@ -64,3 +64,101 @@ char READ_Input(){
     }
     return cc;
 }
+
+int CharToInt(char c){
+    int angka;
+    if (c == '1'){
+        angka = 1;
+    }
+    else if (c == '2')
+    {
+        angka = 2;
+    }
+    else if (c == '3')
+    {
+        angka = 3;
+    }
+    else if (c == '4')
+    {
+        angka = 4;
+    }
+    else if (c == '5')
+    {
+        angka = 5;
+    }
+    else if (c == '6')
+    {
+        angka = 6;
+    }
+    else if (c == '7')
+    {
+        angka = 7;
+    }
+    else if (c == '8')
+    {
+        angka = 8;
+    }
+    else if (c == '9')
+    {
+        angka = 9;
+    }
+    else if (c == '0')
+    {
+        angka = 0;
+    }
+    
+    return angka;
+}
+
+char IntToChar(int angka){
+    char c;
+    if (angka == 1){
+        c = '1';
+    }
+    else if (angka == 2)
+    {
+        c = '2';
+    }
+    else if (angka == 3)
+    {
+        c = '3';
+    }
+    else if (angka == 4)
+    {
+        c = '4';
+    }
+    else if (angka == 5)
+    {
+        c = '5';
+    }
+    else if (angka == 6)
+    {
+        c = '6';
+    }
+    else if (angka == 7)
+    {
+        c = '7';
+    }
+    else if (angka == 8)
+    {
+        c = '8';
+    }
+    else if (angka == 9)
+    {
+        c = '9';
+    }
+    else if (angka == 0)
+    {
+        c = '0';
+    }
+    return c;
+}
+
+int Pangkat(int asli, int exponen){
+    int result=1;
+    for (exponen; exponen>0; exponen--)
+    {
+        result = result * asli;
+    }
+    return result;
+}
