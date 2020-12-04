@@ -93,11 +93,13 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
                 /* code */
+
+                Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
             }
             else if(IsStringSama(Command.TabKata,"END_DAY")){
 
                 /* code */
-                Order(&Q);
+                Order(&Q); /*Pesanan dibangkitkan secara random */
             }
             else if(IsStringSama(Command.TabKata,"SAVE")){
                 /* code */
