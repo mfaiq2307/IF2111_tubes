@@ -60,11 +60,15 @@ diakuisisi */
     int i; /* definisi */ 
     /* Algoritma*/ 
     i = 0; /* inisialisasi */ 
-    while ((CC != MARK) && (CC != BLANK)) {
+    boolean cont = true;
+    while ((CC != MARK) && (CC != BLANK) && (cont)) {
         /*printf("%c",CC);*/
         CKata.TabKata[i] = CC;
-        /*printf("masuk%c",CKata.TabKata[i]);*/ 
-        ADV_File(); 
+            /*printf("masuk%c",CKata.TabKata[i]);*/ 
+        ADV_File();
+        if (CC == NEWLINE){
+            break;
+        }
         i++; 
     } /* CC = MARK or CC = BLANK */ 
     CKata.Length = i; 

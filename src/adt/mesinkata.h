@@ -4,6 +4,8 @@
 #include "mesin_kar.h" 
 #define NMax 50 
 #define BLANK ' ' 
+#define NEWLINE '\n'
+#define ENDSTR '\0'
 
 typedef struct { 
 char TabKata[NMax]; 

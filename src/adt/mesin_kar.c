@@ -34,7 +34,8 @@ F.S. : CC adalah karakter berikutnya dari CC yang lama,
 
 CC mungkin = MARK
 Jika CC = MARK maka EOP akan menyala (true) */
-    retval = fscanf(pita, "%c", &CC);
+    retval = fgetc(pita);
+    CC = (char)retval;
     if (IsEOP()){
         fclose(pita);
     }
