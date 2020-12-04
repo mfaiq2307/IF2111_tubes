@@ -57,7 +57,10 @@ void Pop (Stack *S, infotype *X);
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 
+/* ************ Mencetak sebuah elemen Stack ************ */
 void PrintStack(Stack S);
-/* Mencetak isi dari Stack */
+/* Mencetak elemen dari Stack */
+/* I.S. sembarang; */
+/* F.S. Tercetak semua elemen Stack dari indeks awal hingga indeks TOP */
 
 #endif
