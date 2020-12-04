@@ -23,3 +23,4 @@ WD Blue SATA HDD 1TB,40
 Corsair 850W Gold Efficiency,80
 Corsair 650W Silver Efficiency,60
 Corsair 450W Bronze Efficiency,40
+.
