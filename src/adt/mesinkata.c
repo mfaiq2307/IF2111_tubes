@@ -206,7 +206,17 @@ Kata IntToKata(int angka){
     }
 }
 
+char* Cleanse(char* Kotor){
+    int i = 0;
+    while (i < 40){
+        Kotor[i] = ENDSTR;
+        i++;
+  }
+  return Kotor;
+}
+
 void CopyString(char *Base, char *Copycat){
+    Copycat = Cleanse(Copycat);
     int i = 0;
     while (Base[i] != ENDSTR){
         Copycat[i] = Base[i];

@@ -9,10 +9,14 @@ void CreateGraph(POINT P, Graph *G){
     First(*G) = Pn; 
 }
 
-addrNode AlokNode(POINT P){
+addrNode AlokNode(int x, int y,char Sym){
+    BANGUNAN B;
+    Absis(Lokasi(B)) = x;
+    Ordinat(Lokasi(B)) = y;
+    Simbol(B) = Sym;
     addrNode Pn = (addrNode) malloc(1 * sizeof (ElmtNode));
     if (Pn != Nil){
-        Info(Pn) = P;
+        Info(Pn) = B;
         Hub(Pn) = Nil;
         Next(Pn) = Nil;
         return Pn;
