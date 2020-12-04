@@ -93,7 +93,7 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
                 /* code */
-
+                Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Upah order dimasukkan ke status uang */
                 Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
             }
             else if(IsStringSama(Command.TabKata,"END_DAY")){
@@ -103,6 +103,7 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"SAVE")){
                 /* code */
+
             }
             else if(IsStringSama(Command.TabKata,"MAP")){
                 /* code */
