@@ -4,6 +4,8 @@
 #ifndef stack_H
 #define stack_H
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "boolean.h"
 
 #define Nil NULL
