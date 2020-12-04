@@ -77,9 +77,9 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"CHECKORDER")){
                 /* code */
-                printf("Nomor Order: %d",nomorOrder);
-                printf("Pemesan : %d",NoPelanggan(InfoHead(Q)));
-                printf("Invoice : $%d",Harga(InfoHead(Q)));
+                printf("Nomor Order: %d\n",nomorOrder);
+                printf("Pemesan : %d\n",NoPelanggan(InfoHead(Q)));
+                printf("Invoice : $%d\n",Harga(InfoHead(Q)));
                 CheckKomponen(Q);
             }
             else if(IsStringSama(Command.TabKata,"STARTBUILD")){

@@ -194,94 +194,94 @@ void Order (Queue * Q) {
 void CheckKomponen(Queue Q){
     int *komponen = Kompn(ListKomponen(InfoHead(Q)));
     int i;
-    printf("Komponen:")
+    printf("Komponen:\n");
     for(i=0;i<8;i++){ 
         if (i==0){  /*MotherBoard*/
             if (komponen[i]==0) { /*x570*/
-                printf("1. ROG X570");
+                printf("1. ROG X570\n");
             }
             else if (komponen[i]==1){ /*b550*/
-                printf("1. TUF B550");
+                printf("1. TUF B550\n");
             }
             else { /*a320*/
-                printf("1. ASUS A320");
+                printf("1. ASUS A320\n");
             }
         }
         if (i==1){ /*CPU*/
             if (komponen[i]==0) {/* ryzen 7*/
-                printf("2. AMD Ryzen 7");
+                printf("2. AMD Ryzen 7\n");
             }
             else if (komponen[i]==1){/* ryzen 5*/
-                printf("2. AMD Ryzen 5");
+                printf("2. AMD Ryzen 5\n");
             }
             else { /* ryzen 3 */
-                printf("2. AMD Ryzen 3");
+                printf("2. AMD Ryzen 3\n");
             }
         }
         if (i==2){ /*RAM*/
             if (komponen[i]==0) { /*2x16 Gb*/
-                printf("3. Kingston HyperX Fury 2x16 GB");
+                printf("3. Kingston HyperX Fury 2x16 GB\n");
             }
             else if (komponen[i]==1){ /*2x8 GB*/
-                printf("3. Kingston HyperX 2x8 GB");
+                printf("3. Kingston HyperX 2x8 GB\n");
             }
             else { /*2x4 GB */
-                printf("3. Kingston 2x4 GB");
+                printf("3. Kingston 2x4 GB\n");
             }
         }
         if (i==3){ /*CPU Cooler */
             if (komponen[i]==0) { /*AIO Watercooling*/
-                printf("4. Noctua AIO Watercooling");
+                printf("4. Noctua AIO Watercooling\n");
             }
             else if (komponen[i]==1){ /*High-profile Aircooling */
-                printf("4. Noctua High-profile Aircooling");
+                printf("4. Noctua High-profile Aircooling\n");
             }
             else { /* Low-profile Aircooling */
-                printf("4. Noctua Low-profile Aircooling");
+                printf("4. Noctua Low-profile Aircooling\n");
             }
         }
         if (i==4){ /*Casing*/
             if (komponen[i]==0) { /*Tower*/
-                printf("5. SilverStone Tower");
+                printf("5. SilverStone Tower\n");
             }
             else if (komponen[i]==1){ /*MTX*/
-                printf("5. SilverStone MTX");
+                printf("5. SilverStone MTX\n");
             }
             else { /*ITX*/
-                printf("5. SilverStone ITX");
+                printf("5. SilverStone ITX\n");
             }
         }
         if (i==5){ /*GPU*/
             if (komponen[i]==5) { /*RTX*/
-                printf("6. Nvidia RTX 2060");
+                printf("6. Nvidia RTX 2060\n");
             }
             else if (komponen[i]==1){ /*GTX*/
-                printf("6. Nvidia GTX 1050Ti");
+                printf("6. Nvidia GTX 1050Ti\n");
             }
             else { /*GT*/
-                printf("6. Nvidia GTX 750");
+                printf("6. Nvidia GTX 750\n");
             }
         }
         if (i==6){ /*Storage*/
             if (komponen[i]==0) { /*NVME SSD 512 GB*/
-                printf("7. WD Black NVME SSD 512GB");
+                printf("7. WD Black NVME SSD 512GB\n");
             }
             else if (komponen[i]==1){ /*SATA SSD 512 GB*/
-                printf("7. WD Green SATA SSD 512GB");
+                printf("7. WD Green SATA SSD 512GB\n");
             }
             else { /* SATA HDD 1 TB*/
-                printf("7. WD Blue SATA HDD 1TB");
+                printf("7. WD Blue SATA HDD 1TB\n");
             }
         }
         if (i==7){ /*PSU*/
             if (komponen[i]==0) { /*Gold Efficiency*/
-                printf("8. Corsair 850W Gold Efficiency");
+                printf("8. Corsair 850W Gold Efficiency\n");
             }
             else if (komponen[i]==1){ /*Silver Efficiency*/
-                printf("8. Corsair 650W Silver Efficiency");
+                printf("8. Corsair 650W Silver Efficiency\n");
             }
             else { /* Bronze Efficiency*/
-                printf("8. Corsair 450W Bronze Efficiency");
+                printf("8. Corsair 450W Bronze Efficiency\n");
             }
         }
         
