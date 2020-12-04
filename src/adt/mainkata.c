@@ -3,7 +3,7 @@
 
 
 int main() {
-    char filename[] = "parts.txt";
+    char filename[] = "config.txt";
     STARTKATA_File(filename);
     while (!EndKata) { 
         for (int i=0;i<CKata.Length;i++) {
