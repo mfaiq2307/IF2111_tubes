@@ -41,10 +41,14 @@ void Pop (Stack * S, infotype* X)
 	Top(*S)--;
 }
 
+/* ************ Mencetak sebuah elemen Stack ************ */
 void PrintStack(Stack S)
+/* Mencetak elemen dari Stack */
+/* I.S. sembarang; */
+/* F.S. Tercetak semua elemen Stack dari indeks awal hingga indeks TOP */
 {
 	int i;
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < S.TOP+1; i++)
 	{
 		printf("%d. %c\n", i+1, S.T[i]);
 	}
