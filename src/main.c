@@ -6,6 +6,8 @@
 #include "adt/mesinkata.h"
 #include "adt/circular_queue.h"
 #include "adt/stack.h"
+#include "adt/parts.h"
+#include "adt/inventory.h"
 
 typedef struct {
     int Uang;
@@ -67,6 +69,9 @@ int main(void)
         /*Baris kode buat bikin Map */
 
         /* Baris kode buat ngebangkitin order*/
+
+        /* Baris kode buat inventory */
+
 
         Kata Command;
         printf("ENTER COMMAND: ");

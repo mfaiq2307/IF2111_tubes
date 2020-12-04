@@ -1,26 +1,25 @@
 komponen,harga,jenis
-ROG X570,400,Motherboard
-TUF B550,250,Motherboard
-ASUS A320,150,Motherboard
-AMD Ryzen 7,300,CPU
-AMD Ryzen 5,200,CPU
-AMD Ryzen 3,100,CPU
-Kingston HyperX Fury 2x16 GB,160,RAM
-Kingston HyperX 2x8 GB,80,RAM
-Kingston 2x4 GB,40,RAM
-Noctua AIO Watercooling,100,CPU Cooler
-Noctua High-profile Aircooling,50,CPU Cooler
-Noctua Low-profile Aircooling,25,CPU Cooler
-SilverStone Tower,100,Case
-SilverStone MTX,100,Case
-SilverStone ITX,100,Case
-Nvidia RTX 2060,300
-Nvidia GTX 1050Ti,100
-Nvidia GTX 750,30
-WD Black NVME SSD 512GB,80
-WD Green SATA SSD 512GB,60
-WD Blue SATA HDD 1TB,40
-Corsair 850W Gold Efficiency,80
-Corsair 650W Silver Efficiency,60
-Corsair 450W Bronze Efficiency,40
-.
+ROG"X570,400,Motherboard
+TUF"B550,250,Motherboard
+ASUS"A320,150,Motherboard
+AMD"Ryzen"7,300,CPU
+AMD"Ryzen"5,200,CPU
+AMD"Ryzen"3,100,CPU
+Kingston"HyperX"Fury"2x16"GB,160,RAM
+Kingston"HyperX"2x8"GB,80,RAM
+Kingston"2x4"GB,40,RAM
+Noctua"AIO"Watercooling,100,CPU"Cooler
+Noctua"High-profile"Aircooling,50,CPU"Cooler
+Noctua"Low-profile"Aircooling,25,CPU"Cooler
+SilverStone"Tower,100,Case
+SilverStone"MTX,100,Case
+SilverStone"ITX,100,Case
+Nvidia"RTX"2060,300
+Nvidia"GTX"1050Ti,100
+Nvidia"GTX"750,30
+WD"Black"NVME"SSD"512GB,80
+WD"Green"SATA"SSD"512GB,60
+WD"Blue"SATA"HDD"1TB,40
+Corsair"850W"Gold"Efficiency,80
+Corsair"650W"Silver"Efficiency,60
+Corsair"450W"Bronze"Efficiency,40.
