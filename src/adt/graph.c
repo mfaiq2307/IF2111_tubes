@@ -36,17 +36,66 @@ void DealokCon(addrCon *Pt)
 }
 addrNode SearchNode(Graph G, POINT P)
 {
+    /* KAMUS LOKAL */
+    addrNode Pnode;
+    /*Algoritma*/
+    Pnode=First(G);
+    while ((Info(Pnode)!=P) && (Pnode!=Nil)) {
+        Pnode=Next(Pnode);
+    }
+    return Pnode;
+
+    
     
 }
 
 addrCon SearchEdge(Graph G, POINT P1, POINT P2)
 {
+    /*KAMUS LOKAL */
+    addrNode P;
+    addrCon S;
+    boolean found;
+    /*Algoritma*/
+    P=First(G);
+    if (!IsEmpty(G)){
+        found=false;
+        if (Info(P)== P1) {
+            S=Hub(P);
+            if (Connect(S)!=P2) {
+                while((S!=Nil)&&(!found)){
+                    S=Next(S);
+                    if (Connect(S)==P2){
+                        found=true;
+                    }
+                }
+            }
+            else {
+                found=true;
+            }
+        }
+    }
 
 }
 
 void InsertNode(Graph G, POINT P)
 {
-
+    /* KAMUS LOKAl */
+    addrNode Pn;
+    addrNode Prec;
+    /* Algoritma */
+    Pn= AlokNode(P);
+    if (Pn != Nil){
+        if (IsEmpty(G)){
+            First(G)=Pn;
+        }
+        else {
+            Prec=First(G);
+            while(Next(Prec)!=Nil){
+                Prec=Next(Prec);
+            }
+            Next(Prec)=Pn;
+        }
+    }
 }
 
 void InsertEdge(Graph G, POINT P1, POINT P2)
