@@ -74,6 +74,7 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"STATUS")){
                 /* code */
+                
             }
             else if(IsStringSama(Command.TabKata,"CHECKORDER")){
                 /* code */
@@ -84,9 +85,16 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"STARTBUILD")){
                 /* code */
+                printf("Kamu telah memulai pesanan %d untuk pelanggan %d\n",nomorOrder,NoPelanggan(InfoHead(Q)));
             }
             else if(IsStringSama(Command.TabKata,"FINISHBUILD")){
                 /* code */
+                /*Jika telah selesai*/
+                printf("Pesanan %d telah selesai. Sialhkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
+
+                /*Jika belum selesai*/
+                printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
+
             }
             else if(IsStringSama(Command.TabKata,"ADDCOMPONENT")){
                 /* code */
@@ -106,6 +114,7 @@ int main(void)
 
                 /* code */
                 Order(&Q); /*Pesanan dibangkitkan secara random */
+                nomorOrder++;
             }
             else if(IsStringSama(Command.TabKata,"SAVE")){
                 /* code */
