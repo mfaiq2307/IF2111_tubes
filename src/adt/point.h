@@ -32,7 +32,7 @@ typedef struct {
 /* *** Notasi Akses: Selektor POINT.BANGUNAN *** */
 #define NBangunan(L) (L).NBangunan
 #define Point(L,i) (L).ArrayOfBuilding[(i)].Lokasi
-#define CSimbol(L,i) (L).ArrayOfBuilding[(i)].CSimbol
+#define CSimbol(L,i) (L).ArrayOfBuilding[(i)].Simbol
 
 /* *** DEFINISI PROTOTIPE PRIMITIF *** */
 /* *** Konstruktor membentuk POINT *** */

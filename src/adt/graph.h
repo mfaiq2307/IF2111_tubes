@@ -46,12 +46,12 @@ void DealokNode(addrNode *Pn);
 
 void DealokCon(addrCon *Pt);
 
-addrNode SearchNode(Graph G, POINT P);
+addrNode SearchNode(Graph G, int x, int y);
 
-addrCon SearchEdge(Graph G, POINT P1, POINT P2);
+addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2);
 
-void InsertNode(Graph G, POINT P);
+void InsertNode(Graph G, int x, int y);
 
-void InsertEdge(Graph G, POINT P1, POINT P2);
+void InsertEdge(Graph G, int x1, int y1, int x2, int y2);
 
 #endif

@@ -24,6 +24,7 @@ addrNode AlokNode(POINT P){
 addrCon AlokCon(addrNode Pn)
 {
     addrCon Pt = (addrCon) malloc(1 * sizeof (ConnectNode));
+    NextC(Pt) = Nil;
 }
 
 void DealokNode(addrNode *Pn)
@@ -34,13 +35,19 @@ void DealokCon(addrCon *Pt)
 {
     free(*Pt);
 }
-addrNode SearchNode(Graph G, POINT P)
+addrNode SearchNode(Graph G, int x, int y)
 {
     /* KAMUS LOKAL */
+    POINT P;
     addrNode Pnode;
+
+    /*Initialisasi POINT */    
+    Absis(P) = x;
+    Ordinat(P) = y;
+
     /*Algoritma*/
     Pnode=First(G);
-    while ((Info(Pnode)!=P) && (Pnode!=Nil)) {
+    while ((!EqPOINT(Info(Pnode),P)) && (Pnode!=Nil)) {
         Pnode=Next(Pnode);
     }
     return Pnode;
@@ -48,23 +55,30 @@ addrNode SearchNode(Graph G, POINT P)
     
     
 }
-
-addrCon SearchEdge(Graph G, POINT P1, POINT P2)
+addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2)
 {
+    POINT P1,P2;
+    Absis(P1) = x1;
+    Ordinat(P1) = y1;
+
+    Absis(P2) = x2;
+    Ordinat(P2) = y2;
+
     /*KAMUS LOKAL */
     addrNode P;
     addrCon S;
     boolean found;
+
     /*Algoritma*/
     P=First(G);
     if (!IsEmpty(G)){
         found=false;
-        if (Info(P)== P1) {
+        if (EqPOINT(Info(P),P1)) {
             S=Hub(P);
-            if (Connect(S)!=P2) {
+            if (EqPOINT(Info(Connect(S)),P2)) {
                 while((S!=Nil)&&(!found)){
-                    S=Next(S);
-                    if (Connect(S)==P2){
+                    S=NextC(S);
+                    if (EqPOINT(Info(Connect(S)),P2)){
                         found=true;
                     }
                 }
@@ -77,9 +91,10 @@ addrCon SearchEdge(Graph G, POINT P1, POINT P2)
 
 }
 
-void InsertNode(Graph G, POINT P)
+void InsertNode(Graph G, int x, int y)
 {
     /* KAMUS LOKAl */
+    BANGUNAN.P
     addrNode Pn;
     addrNode Prec;
     /* Algoritma */
@@ -98,16 +113,16 @@ void InsertNode(Graph G, POINT P)
     }
 }
 
-void InsertEdge(Graph G, POINT P1, POINT P2)
+void InsertEdge(Graph G, int x1, int y1, int x2, int y2)
 {
 
 }
 
-/* ADT TAMBAHAN UNTUK KEPERLUAN GAME
-baca map.txt, trus liat disitu, kalo dia 1 berarti dia nanti dihubungin sama jalan
-ini belum di test, masih kasarnya aja
+/* ADT TAMBAHAN UNTUK KEPERLUAN GAME */
+/*baca map.txt, trus liat disitu, kalo dia 1 berarti dia nanti dihubungin sama jalan
+ini belum di test, masih kasarnya aja */
 
-void ConvertMapToGraph (Matriks M, Graph *G){ 
+/*void ConvertMapToGraph (Matriks M, Graph *G){ 
     for (int i = BarisPertama; i <= BarisTerakhir; i++)
     {
         for (int j = KolomPertama; j <= KolomTerakhir; j++)
@@ -118,5 +133,4 @@ void ConvertMapToGraph (Matriks M, Graph *G){
             }
         }
     }
-}
-/*
+} */
