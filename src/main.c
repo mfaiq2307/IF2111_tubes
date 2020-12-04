@@ -54,9 +54,11 @@ int main(void)
             /*Kode buat masukin tiap bangunan ke ADT Point */
         }
         /* Pembuatan Queue dengan panjang max */
-        int max=15;
+        int max=15; /*Jumlah maksimal antrian pesanan*/
         Queue Q;
+        int nomorOrder=1; /* Nomor Order */
         Q = CreateQueue(max);
+        Order(&Q); /*Inisialisasi Order*/
 
         /*Baris kode buat bikin Map */
 
@@ -75,6 +77,10 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"CHECKORDER")){
                 /* code */
+                printf("Nomor Order: %d",nomorOrder);
+                printf("Pemesan : %d",NoPelanggan(InfoHead(Q)));
+                printf("Invoice : $%d",Harga(InfoHead(Q)));
+                CheckKomponen(Q);
             }
             else if(IsStringSama(Command.TabKata,"STARTBUILD")){
                 /* code */
@@ -93,7 +99,7 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
                 /* code */
-                Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Upah order dimasukkan ke status uang */
+                Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Invoice dimasukkan ke status uang */
                 Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
             }
             else if(IsStringSama(Command.TabKata,"END_DAY")){
