@@ -44,7 +44,7 @@ void Pop (Stack * S, infotype* X)
 void PrintStack(Stack S)
 {
 	int i;
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < S.TOP+1; i++)
 	{
 		printf("%d. %c\n", i+1, S.T[i]);
 	}
