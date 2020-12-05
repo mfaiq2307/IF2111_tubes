@@ -76,21 +76,19 @@ void TulisIsiTabPart(TabPart T)
     /* F.S. Jika T tidak kosong: [e1,e2,...,en] */
     /* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
     /* Jika tabel kosong : menulis [] */
-    if (IsEmptyPart(T))
+   if (IsEmptyPart(T))
     {
         printf("[]");
     }
     else
     {
-        printf("[");
-        for (IdxPartType i = FirstIdx(T); i < LastIdx(T); i++)
+        for (IdxPartType i = FirstIdx(T); i <= LastIdx(T); i++)
         {
             printf("%s,", NamaPart(T, i).TabKata);
             printf("%s,", HargaPart(T, i).TabKata);
-            printf("%s,", JenisPart(T, i).TabKata);
-            
+            printf("%s", JenisPart(T, i).TabKata);
+            printf("\n");
         }
-        printf("%s]", NamaPart(T, LastIdx(T)).TabKata);
     }
 }
 /* ********** SEARCHING ********** */
