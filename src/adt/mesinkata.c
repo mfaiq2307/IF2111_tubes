@@ -257,6 +257,6 @@ boolean IsKataInt(Kata Tulisan){
 
 void SeekMARK(){
     while(CKata.TabKata != "MARK"){
-        ADV_File();
+        ADVKATA_File();
     }
 }
