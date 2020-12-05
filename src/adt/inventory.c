@@ -78,19 +78,19 @@ void TulisIsiTabInventory(TabInventory T)
     /* Jika tabel kosong : menulis [] */
     if (IsEmptyInventory(T))
     {
-        printf("[]");
+        printf("inventory kosong");
     }
     else
     {
-        printf("[");
-        for (IdxInventoryType i = GetFirstIdx(T); i < GetLastIdx(T); i++)
+        for (IdxInventoryType i = GetFirstIdx(T); i <= GetLastIdx(T); i++)
         {
-            printf("%s,", NamaInventory(T, i).TabKata);
-            printf("%d,", BanyakInventory(T, i));
-            printf("%s,", JenisInventory(T, i).TabKata);
+            if(BanyakInventory(T,i) != 0){
+            print("%s. ", i);
+            printf("%s ", NamaInventory(T, i).TabKata);
+            printf("\n");
+            }
             
         }
-        printf("%s]", NamaInventory(T, GetLastIdx(T)).TabKata);
     }
 }
 /* ********** SEARCHING ********** */
