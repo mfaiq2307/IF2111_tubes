@@ -111,7 +111,7 @@ int main(void)
                 int *komponen = Kompn(ListKomponen(InfoHead(Q))); /* Assigm List Komponen pada Head Queue ke dalam variabel komponen yang bertipe list of integer*/
                 int i; /* variabel indeks */
                 int count=0 ; /* determiner untuk ketepatan isi stack melalui jumlah count=8 */
-                for(i=0;i<8;i++) { /* Pengecekan isi stack apakah sudah sesuai urutan dan  isinya dengan queue */
+                for(i=0;i<8;i++) { /* Pengecekan isi stack apakah sudah sesuai urutan dan  isinya dengan list komponen queue */
                     if (i==0){  /*MotherBoard*/
                             if ((komponen[i]==0) && (S.T[i]=='ROG X570')) { /*x570*/
                                     count++;
