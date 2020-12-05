@@ -108,11 +108,11 @@ int main(void)
                 /* code */
                 /*Jika jumlah elemen stack = 8*/
                 if (NbStackElmt(S)==8) {
-                int *komponen = Kompn(ListKomponen(InfoHead(Q))); /* Assigm List Komponen pada Head Queue ke dalam variabel komponen yang bertipe list of integer*/
-                int i; /* variabel indeks */
-                int count=0 ; /* determiner untuk ketepatan isi stack melalui jumlah count=8 */
-                for(i=0;i<8;i++) { /* Pengecekan isi stack apakah sudah sesuai urutan dan  isinya dengan list komponen queue */
-                    if (i==0){  /*MotherBoard*/
+                    int *komponen = Kompn(ListKomponen(InfoHead(Q))); /* Assigm List Komponen pada Head Queue ke dalam variabel komponen yang bertipe list of integer*/
+                    int i; /* variabel indeks */
+                    int count=0 ; /* determiner untuk ketepatan isi stack melalui jumlah count=8 */
+                    for(i=0;i<8;i++) { /* Pengecekan isi stack apakah sudah sesuai urutan dan  isinya dengan list komponen queue */
+                        if (i==0){  /*MotherBoard*/
                             if ((komponen[i]==0) && (S.T[i]=='ROG X570')) { /*x570*/
                                     count++;
                                 }
@@ -126,7 +126,7 @@ int main(void)
                                     count--;
                                 }
                             }
-                    if (i==1){ /*CPU*/
+                        if (i==1){ /*CPU*/
                             if ((komponen[i]==0) && (S.T[i]=='AMD Ryzen 7')) {/* ryzen 7*/
                                     count++;
                                 }
@@ -140,7 +140,7 @@ int main(void)
                                     count--;
                                 }
                             }
-                    if (i==2){ /*RAM*/
+                        if (i==2){ /*RAM*/
                             if ((komponen[i]==0) && (S.T[i]=='Kingston HyperX Fury 2x16 GB')) { /*2x16 Gb*/
                                     count++;
                                 }
@@ -154,7 +154,7 @@ int main(void)
                                     count--;
                                 }
                             }
-                    if (i==3){ /*CPU Cooler */
+                        if (i==3){ /*CPU Cooler */
                             if ((komponen[i]==0) && (S.T[i]=='Noctua AIO Watercooling')) { /*AIO Watercooling*/
                                     count++;
                                 }
@@ -168,7 +168,7 @@ int main(void)
                                     count--;
                                 }
                             }
-                    if (i==4){ /*Casing*/
+                        if (i==4){ /*Casing*/
                             if ((komponen[i]==0) && (S.T[i]=='SilverStone Tower')) { /*Tower*/
                                     count++;
                                 }
@@ -182,7 +182,7 @@ int main(void)
                                     count--;
                                 }
                             }
-                    if (i==5){ /*GPU*/
+                        if (i==5){ /*GPU*/
                             if ((komponen[i]==5) && (S.T[i]=='Nvidia RTX 2060')) { /*RTX*/
                                     count++;          
                                 }
@@ -196,7 +196,7 @@ int main(void)
                                     count--;
                                 }
                             }                   
-                    if (i==6){ /*Storage*/
+                        if (i==6){ /*Storage*/
                             if ((komponen[i]==0) && (S.T[i]=='WD Black NVME SSD 512GB')) { /*NVME SSD 512 GB*/
                                     count++;
                                 }
@@ -210,7 +210,7 @@ int main(void)
                                     count--;
                                 }
                             }
-                    if (i==7){ /*PSU*/
+                        if (i==7){ /*PSU*/
                             if ((komponen[i]==0) && (S.T[i]=='Corsair 850W Gold Efficiency')) { /*Gold Efficiency*/
                                     count++;
                                 }
@@ -224,17 +224,17 @@ int main(void)
                                     count--;
                                 }
                             }
+                        }
+                    if (count==8) { /* Jika telah Selesai */
+                            printf("Pesanan %d telah selesai. Sialhkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
+                        }
+                    else { /*Jika belum selesai yaitu isinya belum sesuai*/
+                            printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
+                        }
                     }
-                if (count==8) { /* Jika telah Selesai */
-                printf("Pesanan %d telah selesai. Sialhkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
-                }
-                else { /*Jika belum selesai*/
-                printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
-                }
-                }
-                /*Jika belum selesai*/
+                /*Jika belum selesai yaitu jumlah elemen stack < 8*/
                 else {
-                printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
+                    printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
                 }
 
             }
