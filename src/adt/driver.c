@@ -3,7 +3,7 @@
 
 
 int main() {
-    char filename[] = "parts.txt";
+    char filename[] = "aku.txt"; /*test*/
     STARTKATA_File(filename);
     while (!EndKata) { 
         /*for (int i=0;i<CKata.Length;i++) {
