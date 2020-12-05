@@ -269,6 +269,7 @@ int main(void)
                     if (count==8) { /* Jika telah Selesai */
                             printf("Pesanan %d telah selesai. Sialhkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
                             Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
+                            nomorOrder++;
                         }
                     else { /*Jika belum selesai yaitu isinya belum sesuai*/
                             printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
@@ -309,7 +310,6 @@ int main(void)
 
                 /* code */
                 Order(&Q); /*Pesanan dibangkitkan secara random */
-                nomorOrder++;
             }
             else if(IsStringSama(Command.TabKata,"SAVE")){
                 /* code */
