@@ -193,10 +193,10 @@ void Order (Queue * Q) {
 }
 
 void CheckKomponen(Queue Q){
-    int *komponen = Kompn(ListKomponen(InfoHead(Q)));
-    int i;
+    int *komponen = Kompn(ListKomponen(InfoHead(Q))); /* Assigm List Komponen pada Head Queue ke dalam variabel komponen yang bertipe list of integer*/
+    int i; /*indeks array*/
     printf("Komponen:\n");
-    for(i=0;i<8;i++){ 
+    for(i=0;i<8;i++){  /* for loop untuk mengakses setiap elemen*/
         if (i==0){  /*MotherBoard*/
             if (komponen[i]==0) { /*x570*/
                 printf("1. ROG X570\n");
