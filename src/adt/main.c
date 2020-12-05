@@ -271,6 +271,7 @@ int main(void)
                     if (count==8) { /* Jika telah Selesai */
                             printf("Pesanan %d telah selesai. Silahkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
                             Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
+                            SimpanPart(&T,IntToKata(nomorOrder),IntToKata(99));
                             nomorOrder++;
                         }
                     else { /*Jika belum selesai yaitu isinya belum sesuai*/
