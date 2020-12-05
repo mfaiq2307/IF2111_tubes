@@ -353,7 +353,7 @@ int main(void)
                     AddAsLastElPart(&arrayshop,shop);
                     ADVKATA_File();    
                 }
-                TulisIsiTabPart(arrayshop)
+                TulisIsiTabPart(arrayshop);
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
 
