@@ -84,6 +84,7 @@ void TulisIsiTabPart(TabPart T)
     {
         for (IdxPartType i = FirstIdx(T); i <= LastIdx(T); i++)
         {
+            printf("%s,", i);
             printf("%s,", NamaPart(T, i).TabKata);
             printf("%s,", HargaPart(T, i).TabKata);
             printf("%s", JenisPart(T, i).TabKata);
