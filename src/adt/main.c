@@ -282,16 +282,30 @@ int main(void)
 
             }
             else if(IsStringSama(Command.TabKata,"ADDCOMPONENT")){
-                int y;
                 printf("Komponen yang telah terpasang: \n");
                 PrintStack(S);
                 printf("Komponen yang tersedia: \n");
                 TulisIsiTabInventory(T);
-                printf("Komponen yang ingin dipasang: ");
-                scanf("%d",&y);
-                
-                printf("/n");
-
+                int pilihan;
+                pilihan = scanf("Komponen yang ingin dipasang : ");
+                int indekspart;
+                int i;
+                i = 0;
+                indekspart = 1 ;
+                while(i<pilihan){
+                    if(BanyakInventory(T,indekspart) != 0){
+                        i++;
+                    }
+                    indekspart++;
+                }
+                Kata katapartterambil;
+                katapartterambil = NamaInventory(T,indekspart);
+                char partterambil[40];
+                CopyString(NamaInventory(T,indekspart).TabKata,partterambil);
+                AmbilPart(&T,katapartterambil);
+                Push(&S,partterambil);
+                printf("Komponen berhasil dipasang!");
+                printf("\n");    
             }
             else if(IsStringSama(Command.TabKata,"REMOVECOMPONENT")){
                 char X[40];
