@@ -205,7 +205,7 @@ Kata IntToKata(int angka){
     }
 }
 
-char* Cleanse(char* Kotor){
+char* CleanStr(char* Kotor){
     int i = 0;
     while (i < 40){
         Kotor[i] = ENDSTR;
@@ -215,7 +215,7 @@ char* Cleanse(char* Kotor){
 }
 
 void CopyString(char *Base, char *Copycat){
-    Copycat = Cleanse(Copycat);
+    Copycat = CleanStr(Copycat);
     int i = 0;
     while (Base[i] != ENDSTR){
         Copycat[i] = Base[i];
