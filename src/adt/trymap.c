@@ -20,41 +20,42 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
     int X, Y; // Koordinat Point
     char JenisBangunan, CharCustomer;
     int Customer = 0; // Customer ke berapa?
+    int a;
+    char b;
 
     STARTKATA_File(FileMap);
+
     ADVKATA_File();
+
     NBaris = KataToInt(CKata); //10
     ADVKATA_File();
     NKolom = KataToInt(CKata); //15
     MakeMATRIKS(NBaris,NKolom,Map);
     ADVKATA_File();
     InsertSpasi(Map); // Isi Matriks dengan spasi dulu semuanya 
-    ADVKATA_File();
     NObjek = KataToInt(CKata); // 9
     CreateListBangunan(LBangunan);
+    ADVKATA_File();    
 
-    for (MinNObjek = 1; MinNObjek <= NObjek; MinNObjek++)
+    for (MinNObjek = 0; MinNObjek <= NObjek+1; MinNObjek++)
     {
-        ADVKATA_File();
-        JenisBangunan = CKata.TabKata[0]; //B
-
+        JenisBangunan = CKata.TabKata[0];
         ADVKATA_File();
         X = KataToInt(CKata);
-
         ADVKATA_File();
         Y = KataToInt(CKata);
-
         InsertListBangunan(LBangunan, JenisBangunan, X, Y);
-        
+        ADVKATA_File();
+
         if (JenisBangunan=='C')
         {
-            Customer = Customer + 1;
-            CharCustomer = IntToChar(Customer);
-            WriteBuilding (Map,CharCustomer,X,Y);
+            Customer = Customer + 1; // Dimulai dari Customer nomor 1
+            CharCustomer = IntToChar(Customer); // Ubah int(Customer) menjadi char()
+            WriteBuilding (Map,CharCustomer,X,Y); // Tulis Customernya di titik X,Y di Map
         }
         else if (JenisBangunan=='B')
         {
-            *PLoc = MakePOINT(X,Y);
+            *PLoc = MakePOINT(X,Y); 
         }
         else // S
         {

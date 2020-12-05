@@ -45,6 +45,8 @@ boolean IsStackEmpty (Stack S);
 /* Mengirim true jika Stack kosong: lihat definisi di atas */
 boolean IsStackFull (Stack S);
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
+int NbStackElmt (Stack S);
+/* Menghitung jumlah elemen stack efektif */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
 void Push (Stack *S, infotype X);

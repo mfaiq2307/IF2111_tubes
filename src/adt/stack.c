@@ -23,6 +23,20 @@ boolean IsStackFull (Stack S)
 {
 	return Top(S) == MaxEl - 1;
 }
+
+int NbStackElmt (Stack S)
+/* Menghitung jumlah elemen stack efektif */
+{
+	int count = 0;
+	int i = 0;
+
+	while (i < 8 && (i != Top(S)+1)) {
+		count++;
+		i++;
+	}
+	return count;
+}
+
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
 void Push (Stack *S, infotype X)
 /* Menambahkan X sebagai elemen Stack S. */
