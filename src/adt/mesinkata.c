@@ -72,6 +72,7 @@ diakuisisi */
         }
         i++; 
     } /* CC = MARK or CC = BLANK */ 
+    i++;
     CKata.Length = i;
     Clean(&CKata);
     Space(&CKata);
@@ -169,17 +170,6 @@ int KataToInt(Kata String){
     return angka;
 }
 
-int KataToIntF(Kata String){
-    String.Length = String.Length + 1;
-    int angka = 0;
-    int i = String.Length;
-    int j = 0;
-    while (j < i){
-        angka = CharToInt(String.TabKata[j]) + (10 * angka);
-        j++;
-    }
-    return angka;
-}
 
 Kata IntToKata(int angka){
     Kata string;
