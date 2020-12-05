@@ -24,7 +24,7 @@ int main(void)
 
     if (init == 1){
         /*Pembangunan Peta berdasarkan Konfigurasi */
-        
+        STARTKATA_File("config.txt");
         /* Deklarasi Status &
         Initialisasi Kondisi Awal Game*/
         status_t Status;
@@ -39,8 +39,8 @@ int main(void)
         ListOfBangunan L; // Semua building masukin ke list
         MATRIKS Map; // Peta Gamenya
         printf("Map");
-        /*LoadingMap("config.txt", &Map, &L, &Status.PlayerLoc); */
-        STARTKATA_File("config.txt");
+        LoadingMap("config.txt", &Map, &L, &Status.PlayerLoc);
+        
         /*--------Pembuatan Graph------------*/ 
         printf("MapDone");
         
@@ -288,7 +288,7 @@ int main(void)
                 printf("Komponen yang tersedia: \n");
                 TulisIsiTabInventory(T);
                 int pilihan;
-                pilihan = scanf("Komponen yang ingin dipasang : ");
+                scanf("Komponen yang ingin dipasang : %d\n", &pilihan);
                 int indekspart;
                 int i;
                 i = 0;

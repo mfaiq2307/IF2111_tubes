@@ -20,7 +20,7 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
     int a;
     char b;
 
-    STARTKATA_File(FileMap);
+    /*STARTKATA_File(FileMap);*/
 
     ADVKATA_File();
 
