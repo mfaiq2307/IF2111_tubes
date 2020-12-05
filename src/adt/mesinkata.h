@@ -48,6 +48,8 @@ void SalinKata_Item();
 
 int KataToInt(Kata String);
 
+int KataToIntF(Kata String);
+
 Kata IntToKata(int angka);
 
 Kata Purify(Kata Kotor);
