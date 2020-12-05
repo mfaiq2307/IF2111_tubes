@@ -76,6 +76,7 @@ diakuisisi */
     CKata.Length = i;
     Clean(&CKata);
     Space(&CKata);
+    printf("%s",CKata.TabKata);
 }
 
 void SalinKata_Input(Kata *CKata){
