@@ -133,6 +133,7 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"STATUS")){
                 /* code */
+
                 
             }
             else if(IsStringSama(Command.TabKata,"CHECKORDER")){
@@ -268,7 +269,7 @@ int main(void)
                             }
                         }
                     if (count==8) { /* Jika telah Selesai */
-                            printf("Pesanan %d telah selesai. Sialhkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
+                            printf("Pesanan %d telah selesai. Silahkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
                             Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
                             nomorOrder++;
                         }
@@ -288,7 +289,9 @@ int main(void)
                 printf("Komponen yang tersedia: \n");
                 TulisIsiTabInventory(T);
                 int pilihan;
-                scanf("Komponen yang ingin dipasang : %d\n", &pilihan);
+                printf("Komponen yang ingin dipasang:");
+                scanf("%d", &pilihan);
+                pritnf("\n");
                 int indekspart;
                 int i;
                 i = 0;
