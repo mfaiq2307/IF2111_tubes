@@ -65,4 +65,6 @@ boolean HubEmpty(addrNode G);
 
 boolean YesEmpty(Graph G);
 
+int SearchIndex(Graph G, char sym);
+
 #endif

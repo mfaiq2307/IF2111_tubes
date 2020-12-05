@@ -187,4 +187,15 @@ void MappingGraph(Graph *G){
         Pn = Next(Pn);
     }
 }
+int SearchIndex(Graph G, char sym){
+    int IdxG;
+    if (sym == 'B'){
+        IdxG = 1;
+    }else if (sym == 'S'){
+        IdxG = 2;
+    }else{
+        IdxG = CharToInt(sym) + 2;
+    }
+    return IdxG;
+}
 

@@ -86,7 +86,48 @@ int main(void)
 
         while (!IsStringSama(Command.TabKata,"EXIT")){
             if(IsStringSama(Command.TabKata,"MOVE")){
-                printf("Masuk Move\n");
+                char SymGraph;
+                SymGraph = SearchSymPoint(L, Absis(Loc(Status)), Ordinat(Loc(Status)));
+                int IdxGraph;
+                IdxGraph = SearchIndex(G,SymGraph);
+                addrNode GPS;
+                GPS = SearchNode(G,IdxGraph);
+                if (!HubEmpty(GPS)){
+                    printf("Daftar lokasi yang dapat dicapai: \n");
+                    addrCon Way;
+                    int Iterator = 1;
+                    while(Way != Null){
+                        if(Bangunan(Info(Connect(Way))) == 'B'){
+                            printf("%d. Base\n",&Iterator);
+                        }
+                        else if (Bangunan(Info(Connect(Way))) == 'S'){
+                            printf("%d. Shop\n",&Iterator);
+                        }
+                        else
+                        {
+                            printf("%d. Pelanggan %c\n",&Iterator,&Bangunan(Info(Connect(Way))));
+                        }
+                        Way = NextC(Way);
+                        Iterator++;
+                    }
+
+                        char MoveTo;
+                        printf("Nomor tujuan: ");
+                        MoveTo = READ_Input();
+                        
+                        int Where = 1;
+                        addrCon WayP = Hub(GPS);
+                        while (CharToInt(Where) != MoveTo){
+                            WayP = NextC(WayP);
+                            Where++;
+                        }
+                        printf("\n");
+                        char Dest = Bangunan(Info(Connect(Way)));
+                        
+                        Loc(Status) = SearchPoint(L,Dest);
+
+                        printf("Kamu telah mencapai lokasi Pelanggan %c", &Dest);
+                    }
                 /* code */
             }
             else if(IsStringSama(Command.TabKata,"STATUS")){
