@@ -44,10 +44,10 @@ int main(void)
         Graph G;
         CreateGraph(&G);
         int Elemen; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
-        
+        int index;
         /*Inserting Node dan ElmtNode*/
-        for (i = 1; i <= Elemen;i++){
-            InsertNode(&G,i);
+        for (index = 1; index <= Elemen;index++){
+            InsertNode(&G,index);
         }
         MappingGraph(&G);
 
@@ -144,6 +144,7 @@ int main(void)
             else if(IsStringSama(Command.TabKata,"MAP")){
                 /* code */
             }
+            Command = Purify(Command);
             printf("ENTER COMMAND: ");
             SalinKata_Input(&Command);     
         }

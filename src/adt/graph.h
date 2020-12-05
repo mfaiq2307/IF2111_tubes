@@ -56,9 +56,9 @@ addrNode SearchNode(Graph G, int I);
 
 addrCon SearchEdge(Graph G, int I1, int I2);
 
-void InsertNode(Graph G, int I);
+void InsertNode(Graph *G, int I);
 
-void InsertEdge(Graph G, int I1, int I2);
+void InsertEdge(Graph *G, int I1, int I2);
 
 void MappingGraph(Graph *G);
 
