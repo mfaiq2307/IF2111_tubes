@@ -4,6 +4,7 @@
 #include "boolean.h"
 #include "math.h"
 #include "point.h"
+#include "mesinkata.h"
 
 /* *** DEFINISI PROTOTIPE PRIMITIF *** */
 /* *** Konstruktor membentuk POINT *** */
@@ -185,3 +186,12 @@ POINT SearchPoint(ListOfBangunan L, char c){
     }
 }
 
+char* SymToString(char c){
+    char a[20]; 
+    if (c == 'B'){
+        CopyString("base",a);
+    }else if( c == 'S'){
+        CopyString("shop",a);
+    }
+    return a;
+}
