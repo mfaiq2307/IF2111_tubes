@@ -168,11 +168,11 @@ void AmbilPart(TabInventory *T, Kata NamaInventory)
     IdxInventoryType indeksinventory;
     indeksinventory = Search1Inventory(*T,NamaInventory);
     if(indeksinventory == IdxUndef){
-        printf("goblok");
+        printf("error part tidak tersedia");
     }
     else{
         if(BanyakInventory(*T,indeksinventory) == 0){
-            printf("guoblok");
+            printf("error part tidak tersedia");
         }
         else{
             BanyakInventory(*T,indeksinventory)--;
