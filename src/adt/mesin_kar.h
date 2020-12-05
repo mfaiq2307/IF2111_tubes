@@ -56,4 +56,6 @@ int Pangkat(int asli, int exponen);
 boolean IsCharInt(char c);
 
 
+void EndRead();
+
 #endif
