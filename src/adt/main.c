@@ -39,7 +39,8 @@ int main(void)
         ListOfBangunan L; // Semua building masukin ke list
         MATRIKS Map; // Peta Gamenya
         printf("Map");
-        LoadingMap("config.txt", &Map, &L, &Status.PlayerLoc);
+        /*LoadingMap("config.txt", &Map, &L, &Status.PlayerLoc); */
+        STARTKATA_File("config.txt");
         /*--------Pembuatan Graph------------*/ 
         printf("MapDone");
         
