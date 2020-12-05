@@ -256,7 +256,34 @@ boolean IsKataInt(Kata Tulisan){
 }
 
 void SeekMARK(){
-    while(CKata.TabKata != "MARK"){
+    while(!CompKata()){
         ADVKATA_File();
+    }
+}
+
+boolean CompStr(char* string1, char* string2){
+    boolean sama = true;
+    int i = 0;
+    while((string1[i] != '\0') && (string2[i] != '\0') && (sama)){
+        if (string1[i != string2]{
+            sama = false;
+        })
+    }
+    return sama;
+}
+
+boolean CompKata(Kata Kata1, Kata Kata2){
+    boolean Sama = true;
+    if (Kata1.Length == Kata2.Length){
+        int i = 0;
+        while(i < Kata1.Length){
+            if (Kata1.TabKata[i] != Kata2.TabKata[i]){
+                Sama = false;
+            }
+            i++;
+        }
+        return Sama;
+    }else{
+        return false;
     }
 }

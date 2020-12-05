@@ -68,4 +68,7 @@ void PurifyProced(Kata * Kotor);
 
 void SeekMARK();
 
+boolean CompKata(Kata Kata1, Kata Kata2);
+
+boolean CompStr(char* string1, char* string2);
 #endif 
