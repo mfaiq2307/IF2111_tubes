@@ -21,7 +21,6 @@ typedef struct tElmtNode {
     addrCon Hub;
     addrNode Next;
 } ElmtNode;
-
 typedef struct tElmtConNode{
     addrNode Connect;
     addrCon NextCon;

@@ -224,3 +224,16 @@ void CopyString(char *Base, char *Copycat){
         i++;
     }
 }
+
+boolean IsKataInt(Kata Tulisan){
+    int i;
+    i = 0;
+    boolean nfound = true;
+    while ((i < Tulisan.Length) && (nfound)){
+        if(!IsCharInt(Tulisan.TabKata[i])){
+            nfound = false;
+        }
+        i++;
+    }
+    return nfound;
+}

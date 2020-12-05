@@ -53,4 +53,7 @@ int CharToInt(char c);
 
 int Pangkat(int asli, int exponen);
 
+boolean IsCharInt(char c);
+
+
 #endif
