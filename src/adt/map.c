@@ -11,7 +11,7 @@ void MAP(MATRIKS Map, int X, int Y)
     WriteMap(Map, X, Y);
 }
 void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLoc){
-    printf("yes.")
+
     int NBaris, NKolom; // Baris Kolom
     int MinNObjek, NObjek; // Minimal -> Maksimal Objek
     int X, Y; // Koordinat Point
