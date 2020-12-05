@@ -154,13 +154,13 @@ int main(void)
                     int count=0 ; /* determiner untuk ketepatan isi stack melalui jumlah count=8 */
                     for(i=0;i<8;i++) { /* Pengecekan isi stack apakah sudah sesuai urutan dan  isinya dengan list komponen queue */
                         if (i==0){  /*MotherBoard*/
-                            if ((komponen[i]==0) && (S.T[i]=='ROG X570')) { /*x570*/
+                            if ((komponen[i]==0) && (S.T[i]=="ROG X570")) { /*x570*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='UF B550')) { /*b550*/
+                            else if ((komponen[i]==1) && (S.T[i]=="UF B550")) { /*b550*/
                                     count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='ASUS A320')) { /*a320*/
+                            else if ((komponen[i]==2) && (S.T[i]=="ASUS A320")) { /*a320*/
                                     count++;
                                 }
                             else { 
@@ -168,13 +168,13 @@ int main(void)
                                 }
                             }
                         if (i==1){ /*CPU*/
-                            if ((komponen[i]==0) && (S.T[i]=='AMD Ryzen 7')) {/* ryzen 7*/
+                            if ((komponen[i]==0) && (S.T[i]=="AMD Ryzen 7")) {/* ryzen 7*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='AMD Ryzen 5')){/* ryzen 5*/
+                            else if ((komponen[i]==1) && (S.T[i]=="AMD Ryzen 5")){/* ryzen 5*/
                                     count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='AMD Ryzen 3')){ /* ryzen 3 */
+                            else if ((komponen[i]==2) && (S.T[i]=="AMD Ryzen 3")){ /* ryzen 3 */
                                     count++;
                                 }
                             else { 
@@ -182,13 +182,13 @@ int main(void)
                                 }
                             }
                         if (i==2){ /*RAM*/
-                            if ((komponen[i]==0) && (S.T[i]=='Kingston HyperX Fury 2x16 GB')) { /*2x16 Gb*/
+                            if ((komponen[i]==0) && (S.T[i]=="Kingston HyperX Fury 2x16 GB")) { /*2x16 Gb*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='Kingston HyperX 2x8 GB')) { /*2x8 GB*/
+                            else if ((komponen[i]==1) && (S.T[i]=="Kingston HyperX 2x8 GB")) { /*2x8 GB*/
                                     count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='Kingston 2x4 GB')){ /*2x4 GB */
+                            else if ((komponen[i]==2) && (S.T[i]=="Kingston 2x4 GB")){ /*2x4 GB */
                                     count++;
                                 }
                             else { 
@@ -196,13 +196,13 @@ int main(void)
                                 }
                             }
                         if (i==3){ /*CPU Cooler */
-                            if ((komponen[i]==0) && (S.T[i]=='Noctua AIO Watercooling')) { /*AIO Watercooling*/
+                            if ((komponen[i]==0) && (S.T[i]=="Noctua AIO Watercooling")) { /*AIO Watercooling*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='Noctua High-profile Aircooling')) { /*High-profile Aircooling */
+                            else if ((komponen[i]==1) && (S.T[i]=="Noctua High-profile Aircooling")) { /*High-profile Aircooling */
                                     count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='Noctua Low-profile Aircooling')) { /* Low-profile Aircooling */
+                            else if ((komponen[i]==2) && (S.T[i]=="Noctua Low-profile Aircooling")) { /* Low-profile Aircooling */
                                     count++;
                                 }
                             else { 
@@ -210,13 +210,13 @@ int main(void)
                                 }
                             }
                         if (i==4){ /*Casing*/
-                            if ((komponen[i]==0) && (S.T[i]=='SilverStone Tower')) { /*Tower*/
+                            if ((komponen[i]==0) && (S.T[i]=="SilverStone Tower")) { /*Tower*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='SilverStone MTX')) { /*MTX*/
+                            else if ((komponen[i]==1) && (S.T[i]=="SilverStone MTX")) { /*MTX*/
                                    count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='SilverStone ITX')) { /*ITX*/
+                            else if ((komponen[i]==2) && (S.T[i]=="SilverStone ITX")) { /*ITX*/
                                    count++;
                                 }
                             else { 
@@ -224,13 +224,13 @@ int main(void)
                                 }
                             }
                         if (i==5){ /*GPU*/
-                            if ((komponen[i]==5) && (S.T[i]=='Nvidia RTX 2060')) { /*RTX*/
+                            if ((komponen[i]==5) && (S.T[i]=="Nvidia RTX 2060")) { /*RTX*/
                                     count++;          
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='Nvidia GTX 1050Ti')){ /*GTX*/
+                            else if ((komponen[i]==1) && (S.T[i]=="Nvidia GTX 1050Ti")){ /*GTX*/
                                    count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='Nvidia GTX 750')){ /*GT*/
+                            else if ((komponen[i]==2) && (S.T[i]=="Nvidia GTX 750")){ /*GT*/
                                     count++;
                                 }
                             else { 
@@ -238,13 +238,13 @@ int main(void)
                                 }
                             }                   
                         if (i==6){ /*Storage*/
-                            if ((komponen[i]==0) && (S.T[i]=='WD Black NVME SSD 512GB')) { /*NVME SSD 512 GB*/
+                            if ((komponen[i]==0) && (S.T[i]=="WD Black NVME SSD 512GB")) { /*NVME SSD 512 GB*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='WD Green SATA SSD 512GB')){ /*SATA SSD 512 GB*/
+                            else if ((komponen[i]==1) && (S.T[i]=="WD Green SATA SSD 512GB")){ /*SATA SSD 512 GB*/
                                     count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='WD Blue SATA HDD 1TB')){ /* SATA HDD 1 TB*/
+                            else if ((komponen[i]==2) && (S.T[i]=="WD Blue SATA HDD 1TB")){ /* SATA HDD 1 TB*/
                                     count++;
                                 }
                             else { 
@@ -252,13 +252,13 @@ int main(void)
                                 }
                             }
                         if (i==7){ /*PSU*/
-                            if ((komponen[i]==0) && (S.T[i]=='Corsair 850W Gold Efficiency')) { /*Gold Efficiency*/
+                            if ((komponen[i]==0) && (S.T[i]=="Corsair 850W Gold Efficiency")) { /*Gold Efficiency*/
                                     count++;
                                 }
-                            else if ((komponen[i]==1) && (S.T[i]=='Corsair 650W Silver Efficiency')){ /*Silver Efficiency*/
+                            else if ((komponen[i]==1) && (S.T[i]=="Corsair 650W Silver Efficiency")){ /*Silver Efficiency*/
                                     count++;
                                 }
-                            else if ((komponen[i]==2) && (S.T[i]=='Corsair 450W Bronze Efficiency')){/* Bronze Efficiency*/
+                            else if ((komponen[i]==2) && (S.T[i]=="Corsair 450W Bronze Efficiency")){/* Bronze Efficiency*/
                                     count++;
                                 }
                             else { 
