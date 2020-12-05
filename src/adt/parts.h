@@ -60,10 +60,10 @@ void DealokasiPart(TabPart *T);
 /* I.S. T terdefinisi; */
 /* F.S. TI(T) dikembalikan ke system, MaxEl(T)=0; NeffPart(T)=0 */
 
-IdxPartType GetFirstIdx(TabPart T);
+IdxPartType FirstIdx(TabPart T);
 /* Prekondisi : Tabel T tidak kosong */
 /* Mengirimkan indeks elemen T pertama */
-IdxPartType GetLastIdx(TabPart T);
+IdxPartType LastIdx(TabPart T);
 /* Prekondisi : Tabel T tidak kosong */
 /* Mengirimkan indeks elemen T terakhir */
 

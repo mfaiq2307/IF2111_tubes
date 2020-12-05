@@ -9,23 +9,22 @@
 #include "adt/parts.h"
 #include "adt/inventory.h"
 #include "adt/graph.h"
-
-typedef struct {
-    int Uang;
-    int Order; /* ini nanti diganti sama ADT Queue */
-    int Lokasi; /*ini nanti diganti sama ADT Point */
-} status_t;
+#include "adt/addition.h"
 
 int main(void)
 {
-    int Start; /* bisa diganti pilihan */
-    printf("1. Start Game Game \n");
+    Kata Start; /* bisa diganti pilihan */
+    printf("1. Start Game \n");
     printf("2. Load Game \n");
-    printf("Press 1 or 2 to Pick.\n");
-    scanf("%d",Start);
+    printf("Press 1 or 2 to Pick: ");
+    SalinKata_Input(&Start);
+    int init;
+    init = KataToInt(Start);
 
-    if (Start == 1){
+    if (init == 1){
+        printf("masuk\n");
         STARTKATA_File("data/config.txt");
+        printf("test\n");
         /*Pembangunan Peta berdasarkan Konfigurasi */
         
         /* Deklarasi Status &
@@ -38,9 +37,12 @@ int main(void)
         /* Baris kode buat nyimpen detail order pertama di 
         Status : Status.order = ...*/
 
-        /*--------Pembuatan Graph------------*/
+        /*Baris kode buat bikin Map */
 
-        /*Initialisasi*/
+
+        /*--------Pembuatan Graph------------*/ 
+
+        
         Graph G;
         CreateGraph(&G);
         int Elemen; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
@@ -86,6 +88,7 @@ int main(void)
 
         while (!IsStringSama(Command.TabKata,"EXIT")){
             if(IsStringSama(Command.TabKata,"MOVE")){
+                printf("Masuk Move\n");
                 /* code */
             }
             else if(IsStringSama(Command.TabKata,"STATUS")){

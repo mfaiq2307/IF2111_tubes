@@ -22,17 +22,17 @@ void DealokasiPart(TabPart *T)
     MaxElPart(*T) = 0;
 }
 
-IdxPartType GetFirstIdx(TabPart T)
+IdxPartType FirstIdx(TabPart T)
 {
     /* Prekondisi : Tabel T tidak kosong */
     /* Mengirimkan indeks elemen T pertama */
     return IdxMin;
 }
-IdxPartType GetLastIdx(TabPart T)
+IdxPartType LastIdx(TabPart T)
 {
     /* Prekondisi : Tabel T tidak kosong */
     /* Mengirimkan indeks elemen T terakhir */
-    return NeffPart(T) - GetFirstIdx(T) + 1;
+    return NeffPart(T) - FirstIdx(T) + 1;
 }
 
 
@@ -49,7 +49,7 @@ boolean IsIdxEffPart(TabPart T, IdxPartType i)
 {
     /* Mengirimkan true jika i adalah indeks yang terdefinisi utk tabel */
     /* yaitu antara FirstIdx(T)..LastIdx(T) */
-    return ((i >= GetFirstIdx(T)) && (i <= GetLastIdx(T)));
+    return ((i >= FirstIdx(T)) && (i <= LastIdx(T)));
 }
 
 /* ********** TEST KOSONG/PENUH ********** */
@@ -83,14 +83,14 @@ void TulisIsiTabPart(TabPart T)
     else
     {
         printf("[");
-        for (IdxPartType i = GetFirstIdx(T); i < GetLastIdx(T); i++)
+        for (IdxPartType i = FirstIdx(T); i < LastIdx(T); i++)
         {
             printf("%s,", NamaPart(T, i).TabKata);
             printf("%s,", HargaPart(T, i).TabKata);
             printf("%s,", JenisPart(T, i).TabKata);
             
         }
-        printf("%s]", NamaPart(T, GetLastIdx(T)).TabKata);
+        printf("%s]", NamaPart(T, LastIdx(T)).TabKata);
     }
 }
 /* ********** SEARCHING ********** */
@@ -145,7 +145,7 @@ void CopyTabPart(TabPart Tin, TabPart *Tout)
     MakePartEmpty(&ToutT, MaxElPart(Tin));
     NeffPart(ToutT) = NeffPart(Tin);
     //
-    for (IdxPartType i = GetFirstIdx(Tin); i <= GetLastIdx(Tin); i++)
+    for (IdxPartType i = FirstIdx(Tin); i <= LastIdx(Tin); i++)
     {
         ElmtPart(ToutT, i) = ElmtPart(Tin, i);
     }
@@ -160,5 +160,5 @@ void AddAsLastElPart(TabPart *T, ElPartType X)
     /* I.S. Tabel T boleh kosong, tetapi tidak penuh */
     /* F.S. X adalah elemen terakhir T yang baru */
     NeffPart(*T)++;
-    ElmtPart(*T, GetLastIdx(*T)) = X;
+    ElmtPart(*T, LastIdx(*T)) = X;
 }

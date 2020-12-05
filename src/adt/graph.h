@@ -5,18 +5,18 @@
 #include "point.h"
 #include "mesin_kar.h"
 
-#define Nil NULL
+#define Null NULL
 #define MaxIdx 9
 
 typedef struct {
     char Symbol;
     int Index;
-} infotype;
+} Infotype;
 
 typedef struct tElmtNode *addrNode;
 typedef struct tElmtConNode *addrCon;
 typedef struct tElmtNode {
-    infotype Info;
+    Infotype Info;
     /*int NPred;*/
     addrCon Hub;
     addrNode Next;

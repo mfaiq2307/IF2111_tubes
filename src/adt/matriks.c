@@ -16,7 +16,7 @@ void MakeMATRIKS(int NBaris, int NKolom, MATRIKS *M)
     {
         for (j = 0; j < NKolom; j++)
         {
-        (*M).Mem[i][j] = 0;
+            (*M).Mem[i][j] = 0;
         }
     }
 }

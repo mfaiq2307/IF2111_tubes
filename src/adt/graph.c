@@ -4,20 +4,24 @@
 
 
 void CreateGraph(Graph *G){
-    First(*G) = Nil; 
+    First(*G) = Null; 
+}
+
+boolean YesEmpty(Graph G){
+    return (First(G) == Null);
 }
 
 addrNode AlokNode(int I){
-    infotype P;
+    Infotype P;
     Index(P) = I;
     addrNode Pn = (addrNode) malloc(1 * sizeof (ElmtNode));
-    if (Pn != Nil){
+    if (Pn != Null){
         Info(Pn) = P;
-        Hub(Pn) = Nil;
-        Next(Pn) = Nil;
+        Hub(Pn) = Null;
+        Next(Pn) = Null;
         return Pn;
     } {
-        return Nil;
+        return Null;
     }
 }
 
@@ -25,7 +29,7 @@ addrCon AlokCon(addrNode Pn)
 {
     addrCon Pt = (addrCon) malloc(1 * sizeof (ConnectNode));
     Connect(Pt) = Pn;
-    NextC(Pt) = Nil;
+    NextC(Pt) = Null;
 }
 
 void DealokNode(addrNode *Pn)
@@ -43,7 +47,7 @@ addrNode SearchNode(Graph G, int I)
 
     /*Algoritma*/
     Pnode=First(G);
-    while ((Index(Info(Pnode)) != I) && (Pnode != Nil)) {
+    while ((Index(Info(Pnode)) != I) && (Pnode != Null)) {
         Pnode=Next(Pnode);
     }
     return Pnode;
@@ -63,9 +67,9 @@ addrCon SearchEdge(Graph G, int I1, int I2)
     /*Algoritma*/
     P = SearchNode(G,I1);
     Pn = SearchNode(G,I2);
-    if ((P != Nil) && (Pn != Nil)){
+    if ((P != Null) && (Pn != Null)){
         S = Hub(P);
-        while ((S != Nil) && (!found)){
+        while ((S != Null) && (!found)){
             if (Connect(S) == Pn){
                 found = true;
             }else{
@@ -75,10 +79,10 @@ addrCon SearchEdge(Graph G, int I1, int I2)
         if (found){
             return S;
         }else{
-            return Nil;
+            return Null;
         }
     }else{
-        return Nil;
+        return Null;
     }
 
 }
@@ -90,13 +94,13 @@ void InsertNode(Graph *G, int I)
     addrNode Prec;
     /* Algoritma */
     Pn = AlokNode(I);
-    if (Pn != Nil){
-        if (IsEmpty(G)){
+    if (Pn != Null){
+        if (YesEmpty(*G)){
             First(*G)=Pn;
         }
         else {
             Prec=First(*G);
-            while(Next(Prec)!=Nil){
+            while(Next(Prec)!=Null){
                 Prec=Next(Prec);
             }
             Next(Prec)=Pn;
@@ -109,7 +113,7 @@ void InsertEdge(Graph *G, int I1, int I2)
     addrCon S1,S2;
     addrCon C1,C2;
     addrNode P1,P2;
-    if ((SearchNode(*G,I1) != Nil) && ((SearchNode(*G,I2)) != Nil)){
+    if ((SearchNode(*G,I1) != Null) && ((SearchNode(*G,I2)) != Null)){
 
     }else{
         InsertNode(G,I1);
@@ -120,11 +124,11 @@ void InsertEdge(Graph *G, int I1, int I2)
     C2 = AlokCon(P1);
     C1 = AlokCon(P2);
     S1 = Hub(P1);
-    while(S1 != Nil){
+    while(S1 != Null){
         S1 = NextC(S1);
     }
     NextC(S1) = C1;
-    while(S2 != Nil){
+    while(S2 != Null){
         S2 = NextC(S2);
     }
     NextC(S2) = C2;
@@ -157,7 +161,7 @@ void MappingGraph(Graph *G){
     addrNode Pn;
     Pn = First(*G);
     int i = 1;
-    while (Pn != Nil){
+    while (Pn != Null){
         if(Index(Info(Pn)) == 1){
             Bangunan(Info(Pn)) = 'B';
         }
