@@ -10,6 +10,7 @@
 #include "boolean.h"
 #include "mesinkata.h"
 
+
 /*  Kamus Umum */
 #define IdxMin 1
 /* Indeks minimum array */
@@ -20,7 +21,7 @@
 typedef int IdxInventoryType; /* type indeks */
 typedef struct{
     Kata NamaInventory;
-    Kata BanyakInventory;
+    int BanyakInventory;
     Kata JenisInventory;
 } ElInventoryType;  /* type elemen tabel */
 typedef struct
@@ -122,5 +123,9 @@ void AddAsLastElInventory(TabInventory *T, ElInventoryType X);
 /* I.S. Tabel T boleh kosong, tetapi tidak penuh */
 /* F.S. X adalah elemen terakhir T yang baru */
 /* ********** MENGHAPUS ELEMEN ********** */
+
+void AmbilPart(TabInventory *T, Kata NamaInventory);
+
+void SimpanPart(TabInventory *T, Kata NamaInventory, Kata JenisInventory);
 
 #endif

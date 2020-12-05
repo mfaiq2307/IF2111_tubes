@@ -86,7 +86,7 @@ void TulisIsiTabInventory(TabInventory T)
         for (IdxInventoryType i = GetFirstIdx(T); i < GetLastIdx(T); i++)
         {
             printf("%s,", NamaInventory(T, i).TabKata);
-            printf("%s,", BanyakInventory(T, i).TabKata);
+            printf("%d,", BanyakInventory(T, i));
             printf("%s,", JenisInventory(T, i).TabKata);
             
         }
@@ -161,4 +161,41 @@ void AddAsLastElInventory(TabInventory *T, ElInventoryType X)
     /* F.S. X adalah elemen terakhir T yang baru */
     NeffInventory(*T)++;
     ElmtInventory(*T, GetLastIdx(*T)) = X;
+}
+
+void AmbilPart(TabInventory *T, Kata NamaInventory)
+{
+    IdxInventoryType indeksinventory;
+    indeksinventory = Search1Inventory(*T,NamaInventory);
+    if(indeksinventory == IdxUndef){
+        printf("goblok");
+    }
+    else{
+        if(BanyakInventory(*T,indeksinventory) == 0){
+            printf("guoblok");
+        }
+        else{
+            BanyakInventory(*T,indeksinventory)--;
+
+        }
+    }
+
+
+}
+
+void SimpanPart(TabInventory *T, Kata NamaInventory, Kata JenisInventory)
+{
+    int adapart;
+    adapart = Search1Inventory(*T, NamaInventory);
+    if(adapart==IdxUndef){
+        ElInventoryType inventorybaru;
+        inventorybaru.NamaInventory=NamaInventory;
+        inventorybaru.BanyakInventory=1;
+        inventorybaru.JenisInventory=JenisInventory;
+        AddAsLastElInventory(T,inventorybaru);
+    }
+    else{
+        BanyakInventory(*T,adapart)++;
+    }
+    
 }
