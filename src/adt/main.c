@@ -133,8 +133,21 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"STATUS")){
                 /* code */
-                
-            }
+                printf("Uang tersisa: $%d\n",Status.Uang);
+                printf("Buld yang sedang dikerjakan: pesanan %d untuk pelanggan %d\n", &nomorOrder, NoPelanggan(InfoHead(Q)));
+                char SymStatus;
+                SymStatus =  SearchSymPoint(L, Absis(Locate(Status)), Ordinat(Locate(Status)));               
+                if (SymStatus == 'B'){
+                    printf("Lokasi: pemain sedang berada pada base \n");
+                }
+                else if (SymStatus == ' S'){
+                    printf("Lokasi: pemain sedang berada pada shop\n");
+                }else{
+                    printf("Lokasi: pemain sedang berada pada pelanggan %d\n", CharToInt(SymStatus));
+                }
+                printf("Inventory anda: \n");
+                TulisIsiTabInventory(T);
+            }   
             else if(IsStringSama(Command.TabKata,"CHECKORDER")){
                 /* code */
                 printf("Nomor Order: %d\n",nomorOrder);
