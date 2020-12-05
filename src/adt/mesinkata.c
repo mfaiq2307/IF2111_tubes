@@ -254,3 +254,9 @@ boolean IsKataInt(Kata Tulisan){
     }
     return nfound;
 }
+
+void SeekMARK(){
+    while(CKata.TabKata != "MARK"){
+        ADV_File();
+    }
+}
