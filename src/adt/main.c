@@ -334,7 +334,26 @@ int main(void)
                 printf("Komponen %s berhasil dicopot!\n", X);
             }
             else if(IsStringSama(Command.TabKata,"SHOP")){
-                /* code */
+                STARTKATA_File("parts.txt");
+                ElPartType shop;
+                TabPart arrayshop;
+                MakePartEmpty(&arrayshop,30);
+                while(!IsEOP()){
+                    Kata katashop;
+                    katashop=CKata;
+                    ADVKATA_File();
+                    Kata hargashop;
+                    hargashop=CKata;
+                    ADVKATA_File();
+                    Kata jenisshop;
+                    jenisshop=CKata;
+                    shop.NamaPart=katashop;
+                    shop.HargaPart=hargashop;
+                    shop.JenisPart=jenisshop;
+                    AddAsLastElPart(&arrayshop,shop);
+                    ADVKATA_File();    
+                }
+                TulisIsiTabPart(arrayshop)
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
 
