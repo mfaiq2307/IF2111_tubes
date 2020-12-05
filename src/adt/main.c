@@ -38,12 +38,20 @@ int main(void)
         /*Baris kode buat bikin Map */
         ListOfBangunan L; // Semua building masukin ke list
         MATRIKS Map; // Peta Gamenya
+        POINT PLOCA;
+        Status.PlayerLoc = PLOCA;
 
-        LoadingMap("config.txt", &Map, &L, &Locate(Status));
-        
+        LoadingMap("config.txt", &Map, &L, &PLOCA);
+        EndRead();
         /*--------Pembuatan Graph------------*/ 
+        printf("Masul");
+        
         STARTKATA_File("config.txt");
-        SeekMARK();
+        int i = 0;
+        for (i = 0; i < 36;i++){
+            ADVKATA_File();
+        }
+
         Graph G;
         CreateGraph(&G);
         int Elemen = 9; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/

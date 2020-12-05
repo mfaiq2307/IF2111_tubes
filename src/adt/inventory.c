@@ -85,7 +85,7 @@ void TulisIsiTabInventory(TabInventory T)
         for (IdxInventoryType i = GetFirstIdx(T); i <= GetLastIdx(T); i++)
         {
             if(BanyakInventory(T,i) != 0){
-            print("%s. ", i);
+            printf("%s. ", i);
             printf("%s ", NamaInventory(T, i).TabKata);
             printf("\n");
             }
