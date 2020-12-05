@@ -241,7 +241,6 @@ void PurifyProced(Kata * Kotor){
         i++;
     }
     Kotor->Length = 0;
-    return Kotor;
 }
 boolean IsKataInt(Kata Tulisan){
     int i;
