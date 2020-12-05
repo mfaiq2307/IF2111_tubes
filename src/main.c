@@ -10,6 +10,7 @@
 #include "adt/inventory.h"
 #include "adt/graph.h"
 #include "adt/addition.h"
+#include "adt/map.h"
 
 int main(void)
 {
@@ -29,17 +30,19 @@ int main(void)
         Initialisasi Kondisi Awal Game*/
         status_t Status;
         Status.Uang = 10000;
-        Status.Lokasi = 0;/*base*/
+        Status.PlayerLoc;/*base*/
 
         /* Baris kode buat ngebangkitin order*/
         /* Baris kode buat nyimpen detail order pertama di 
         Status : Status.order = ...*/
 
         /*Baris kode buat bikin Map */
-
-
+        ListOfBangunan L; // Semua building masukin ke list
+        MATRIKS Map; // Peta Gamenya
+        printf("Map");
+        LoadingMap("config.txt", &Map, &L, &Status.PlayerLoc);
         /*--------Pembuatan Graph------------*/ 
-
+        printf("MapDone");
         
         Graph G;
         CreateGraph(&G);
@@ -63,6 +66,7 @@ int main(void)
             }
             Baris++;
         }
+        printf("GraphDone");
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/
         Queue Q;
@@ -73,13 +77,10 @@ int main(void)
         /* Deklarasi Stack */
         Stack S;
 
-        /*Baris kode buat bikin Map */
-
-        /* Baris kode buat ngebangkitin order*/
-
         /* Baris kode buat inventory */
         TabInventory T;
 
+        /*Input Command */
         Kata Command;
         printf("ENTER COMMAND: ");
         SalinKata_Input(&Command);
@@ -87,7 +88,7 @@ int main(void)
         while (!IsStringSama(Command.TabKata,"EXIT")){
             if(IsStringSama(Command.TabKata,"MOVE")){
                 char SymGraph;
-                SymGraph = SearchSymPoint(L, Absis(Loc(Status)), Ordinat(Loc(Status)));
+                SymGraph = SearchSymPoint(L, Absis(Locate(Status)), Ordinat(Locate(Status)));
                 int IdxGraph;
                 IdxGraph = SearchIndex(G,SymGraph);
                 addrNode GPS;
@@ -124,7 +125,7 @@ int main(void)
                         printf("\n");
                         char Dest = Bangunan(Info(Connect(Way)));
                         
-                        Loc(Status) = SearchPoint(L,Dest);
+                        Locate(Status) = SearchPoint(L,Dest);
 
                         printf("Kamu telah mencapai lokasi Pelanggan %c", &Dest);
                     }
@@ -316,7 +317,7 @@ int main(void)
 
             }
             else if(IsStringSama(Command.TabKata,"MAP")){
-                /* code */
+                MAP(Map, Absis(Locate(Status)), Ordinat(Locate(Status)));
             }
             Command = Purify(Command);
             printf("ENTER COMMAND: ");

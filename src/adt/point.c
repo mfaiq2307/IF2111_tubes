@@ -169,6 +169,7 @@ char SearchSymPoint(ListOfBangunan L, int x, int y){
 
 POINT SearchPoint(ListOfBangunan L, char c){
     int i = 0;
+    POINT P;
     boolean found = false;
     while((i < MaxBangunan+1) && (!found)){
         if(CSimbol(L,i) == c){
@@ -177,7 +178,7 @@ POINT SearchPoint(ListOfBangunan L, char c){
             i++;
         }
     }if(found){
-        return POINT(L,i);
+        return L.ArrayOfBuilding[i].Lokasi;
     }
     else{
         return MakePOINT(0,0);

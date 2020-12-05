@@ -237,5 +237,3 @@ boolean IsKataInt(Kata Tulisan){
     }
     return nfound;
 }
-
-char* SearchKomponen(Tab)

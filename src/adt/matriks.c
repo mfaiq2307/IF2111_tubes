@@ -51,7 +51,7 @@ indeks KolomTerakhir (MATRIKS M)
     return Kolom(M);
 }
 
-ElType GetElmtDiagonal (MATRIKS M, indeks i)
+ELTYPE GetElmtDiagonal (MATRIKS M, indeks i)
 /* Mengirimkan elemen M(i,i) */
 {
     return Elmt(M,i,i);

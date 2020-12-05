@@ -1,25 +1,12 @@
-// include semua .h dan .c biar ga capek gcc
-#include "boolean.h"
-#include "point.h"
-#include "point.c"
-#include "mesinkata.h"
-#include "mesinkata.c"
-#include "mesin_kar.h"
-#include "mesin_kar.c"
-#include "matriks.h"
-#include "matriks.c"
-#include <stdio.h>
-#include <stdlib.h>
 
-ListOfBangunan Bangunan; // Semua building masukin ke list
-POINT PLoc; // Menentukan posisi lokasi player
-MATRIKS Map; // Peta Gamenya
+#include "map.h"
 
-void MAP()
+void MAP(MATRIKS Map, int X, int Y)
 {
-    WriteMap(Map, Absis(PLoc), Ordinat(PLoc));
+    WriteMap(Map, X, Y);
 }
 void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLoc){
+    printf("Ayolah");
     int NBaris, NKolom; // Baris Kolom
     int MinNObjek, NObjek; // Minimal -> Maksimal Objek
     int X, Y; // Koordinat Point
@@ -27,9 +14,9 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
     int Customer = 0; // Customer ke berapa?
     int a;
     char b;
-
+    printf("BeforeStart");
     STARTKATA_File(FileMap);
-
+    printf("StartKata");
     ADVKATA_File();
 
     NBaris = KataToInt(CKata); //10
@@ -69,9 +56,9 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
     } 
 }   
 
-int main()
+/*int main()
 {
     LoadingMap("config.txt", &Map, &Bangunan, &PLoc);
     MAP();
-}
+}*/
 

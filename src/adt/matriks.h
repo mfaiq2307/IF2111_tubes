@@ -10,9 +10,9 @@
 #define KolomMax 50
 
 typedef int indeks; /* indeks baris, kolom */
-typedef char ElType; 
+typedef char ELTYPE; 
 typedef struct { 
-	ElType Mem[BarisMax+1][KolomMax+1];
+	ELTYPE Mem[BarisMax+1][KolomMax+1];
    int Baris; /* banyaknya/ukuran baris yg terdefinisi */
 	int Kolom; /* banyaknya/ukuran kolom yg terdefinisi */
 } MATRIKS;
@@ -50,7 +50,7 @@ indeks BarisTerakhir(MATRIKS M);
 indeks KolomTerakhir(MATRIKS M);
 /* Mengirimkan indeks kolom terbesar M */
 
-ElType GetElmtDiagonal (MATRIKS M, indeks i);
+ELTYPE GetElmtDiagonal (MATRIKS M, indeks i);
 /* Mengirimkan elemen M(i,i) */
 
 /* ADT TAMBAHAN UNTUK KEPERLUAN GAME */
