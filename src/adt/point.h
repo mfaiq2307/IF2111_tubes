@@ -103,5 +103,8 @@ void InsertListBangunan (ListOfBangunan *L, char B, int X, int Y);
 /* Meng-assign list bangunan ke dalam point X dan Y, dan char tipe bangunan */
 /* (Base, Shop, Customer) di B */
 
+char SearchSymPoint(ListOfBangunan L, int x, int y);
+
+POINT SearchPoint(ListOfBangunan L, char c);
 
 #endif
