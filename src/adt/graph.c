@@ -7,14 +7,12 @@ void CreateGraph(Graph *G){
     First(*G) = Nil; 
 }
 
-addrNode AlokNode(int x, int y,char Sym){
-    BANGUNAN B;
-    Absis(Lokasi(B)) = x;
-    Ordinat(Lokasi(B)) = y;
-    Simbol(B) = Sym;
+addrNode AlokNode(int I){
+    infotype P;
+    Index(P) = I;
     addrNode Pn = (addrNode) malloc(1 * sizeof (ElmtNode));
     if (Pn != Nil){
-        Info(Pn) = B;
+        Info(Pn) = P;
         Hub(Pn) = Nil;
         Next(Pn) = Nil;
         return Pn;
@@ -38,19 +36,14 @@ void DealokCon(addrCon *Pt)
 {
     free(*Pt);
 }
-addrNode SearchNode(Graph G, int x, int y)
+addrNode SearchNode(Graph G, int I)
 {
     /* KAMUS LOKAL */
-    BANGUNAN P;
     addrNode Pnode;
-
-    /*Initialisasi BANGUNAN */    
-    Absis(Lokasi(P)) = x;
-    Ordinat(Lokasi(P)) = y;
 
     /*Algoritma*/
     Pnode=First(G);
-    while ((!EqPOINT(Lokasi(Info(Pnode)),Lokasi(P))) && (Pnode!=Nil)) {
+    while ((Index(Info(Pnode)) != I) && (Pnode != Nil)) {
         Pnode=Next(Pnode);
     }
     return Pnode;
@@ -58,14 +51,8 @@ addrNode SearchNode(Graph G, int x, int y)
     
     
 }
-addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2)
+addrCon SearchEdge(Graph G, int I1, int I2)
 {
-    BANGUNAN P1,P2;
-    Absis(Lokasi(P1)) = x1;
-    Ordinat(Lokasi(P1)) = y1;
-
-    Absis(Lokasi(P2)) = x2;
-    Ordinat(Lokasi(P2)) = y2;
 
     /*KAMUS LOKAL */
     addrNode P;
@@ -74,8 +61,8 @@ addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2)
     boolean found = false;
 
     /*Algoritma*/
-    P = SearchNode(G,x1,y1);
-    Pn = SearchNode(G,x2,y2);
+    P = SearchNode(G,I1);
+    Pn = SearchNode(G,I2);
     if ((P != Nil) && (Pn != Nil)){
         S = Hub(P);
         while ((S != Nil) && (!found)){
@@ -96,20 +83,19 @@ addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2)
 
 }
 
-void InsertNode(Graph G, int x, int y,char sym)
+void InsertNode(Graph *G, int I)
 {
     /* KAMUS LOKAl */
-    BANGUNAN P;
     addrNode Pn;
     addrNode Prec;
     /* Algoritma */
-    Pn= AlokNode(x,y,sym);
+    Pn = AlokNode(I);
     if (Pn != Nil){
         if (IsEmpty(G)){
-            First(G)=Pn;
+            First(*G)=Pn;
         }
         else {
-            Prec=First(G);
+            Prec=First(*G);
             while(Next(Prec)!=Nil){
                 Prec=Next(Prec);
             }
@@ -118,19 +104,19 @@ void InsertNode(Graph G, int x, int y,char sym)
     }
 }
 
-void InsertEdge(Graph G, int x1, int y1, char sym1, int x2, int y2,char sym2)
+void InsertEdge(Graph *G, int I1, int I2)
 {
     addrCon S1,S2;
     addrCon C1,C2;
     addrNode P1,P2;
-    if ((SearchNode(G,x1,y1) != Nil) && ((SearchNode(G,x2,y2)) != Nil)){
+    if ((SearchNode(*G,I1) != Nil) && ((SearchNode(*G,I2)) != Nil)){
 
     }else{
-        InsertNode(G,x1,y1,sym1);
-        InsertNode(G,x2,y2,sym2);
+        InsertNode(G,I1);
+        InsertNode(G,I2);
     }
-    P1 = SearchNode(G,x1,y1);
-    P2 = SearchNode(G,x2,y2);
+    P1 = SearchNode(*G,I1);
+    P2 = SearchNode(*G,I2);
     C2 = AlokCon(P1);
     C1 = AlokCon(P2);
     S1 = Hub(P1);
@@ -160,3 +146,28 @@ ini belum di test, masih kasarnya aja */
         }
     }
 } */
+
+
+/*---------Fungsi Tambahan--------- */
+/*Untuk menghubungkan antara Graph dengan Konfigurasi */
+/* Index 1 = Base */
+/* Index 2 = Shop */
+/* Index lainnya = Index - 2 (Customer) */
+void MappingGraph(Graph *G){
+    addrNode Pn;
+    Pn = First(*G);
+    int i = 1;
+    while (Pn != Nil){
+        if(Index(Info(Pn)) == 1){
+            Bangunan(Info(Pn)) = 'B';
+        }
+        else if (Index(Info(Pn)) == 2){
+            Bangunan(Info(Pn)) = 'S';
+        }
+        else{
+            Bangunan(Info(Pn)) = IntToChar(Index(Info(Pn)) - 2);
+        }
+        Pn = Next(Pn);
+    }
+}
+

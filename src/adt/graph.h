@@ -3,10 +3,16 @@
 
 #include "boolean.h"
 #include "point.h"
+#include "mesin_kar.h"
 
 #define Nil NULL
+#define MaxIdx 9
 
-typedef BANGUNAN infotype;
+typedef struct {
+    char Symbol;
+    int Index;
+} infotype;
+
 typedef struct tElmtNode *addrNode;
 typedef struct tElmtConNode *addrCon;
 typedef struct tElmtNode {
@@ -32,13 +38,13 @@ typedef struct {
 #define NextC(G) (G)->NextCon
 
 /*Selektor Point.Bangunan */
-#define Lokasi(P) ((P).Lokasi)
-#define Simbol(P) ((P).Simbol)
+#define Bangunan(P) ((P).Symbol)
+#define Index(P) ((P).Index)
 #define First(L) ((L).First)
 
 void CreateGraph(Graph *G);
 
-addrNode AlokNode(int x, int y,char Sym);
+addrNode AlokNode(int I);
 
 addrCon AlokCon(addrNode Pn);
 
@@ -46,11 +52,14 @@ void DealokNode(addrNode *Pn);
 
 void DealokCon(addrCon *Pt);
 
-addrNode SearchNode(Graph G, int x, int y);
+addrNode SearchNode(Graph G, int I);
 
-addrCon SearchEdge(Graph G, int x1, int y1, int x2, int y2);
+addrCon SearchEdge(Graph G, int I1, int I2);
 
-void InsertNode(Graph G, int x, int y,char sym);
+void InsertNode(Graph G, int I);
 
-void InsertEdge(Graph G, int x1, int y1, char sym1, int x2, int y2,char sym2);
+void InsertEdge(Graph G, int I1, int I2);
+
+void MappingGraph(Graph *G);
+
 #endif

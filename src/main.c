@@ -8,6 +8,7 @@
 #include "adt/stack.h"
 #include "adt/parts.h"
 #include "adt/inventory.h"
+#include "adt/graph.h"
 
 typedef struct {
     int Uang;
@@ -37,25 +38,31 @@ int main(void)
         /* Baris kode buat nyimpen detail order pertama di 
         Status : Status.order = ...*/
 
-        /* Baris kode buat nentuin Ukuran Peta */
-        int Baris;
-        int Kolom;
-        while (!EndKata) {
-            Baris = CC;
-            ADV_File();
-            Kolom = CC; 
+        /*--------Pembuatan Graph------------*/
+
+        /*Initialisasi*/
+        Graph G;
+        CreateGraph(&G);
+        int Elemen; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
+        
+        /*Inserting Node dan ElmtNode*/
+        for (i = 1; i <= Elemen;i++){
+            InsertNode(&G,i);
+        }
+        MappingGraph(&G);
+
+        /*Memetakan Koneksi antar Node */
+        int Baris = 0;
+        int Kolom = 0;
+        for(Baris = 1;Baris <= Elemen;Baris++){
+            for(Kolom = 1; Kolom <= Elemen; Kolom++){
+                ADVKATA_File();
+                if (CKata.TabKata[0] == '1'){
+                    InsertEdge(&G,Baris,Kolom);
+                }
+            }
         }
 
-        
-        /* Baris kode buat Jumlah Bangunan */
-        int NBangunan;
-        ADVKATA_File;
-        NBangunan = CC;
-        
-        /* Baris kode buat Spesifikin Bangunan */
-        for (int i=0;i<NBangunan;i++){
-            /*Kode buat masukin tiap bangunan ke ADT Point */
-        }
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/
         Queue Q;
