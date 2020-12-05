@@ -61,4 +61,8 @@ void InsertEdge(Graph *G, int I1, int I2);
 
 void MappingGraph(Graph *G);
 
+boolean HubEmpty(addrNode G);
+
+boolean YesEmpty(Graph G);
+
 #endif
