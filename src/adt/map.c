@@ -1,9 +1,9 @@
 
 #include "map.h"
 
-MATRIKS Map;
+/*MATRIKS Map;
 ListOfBangunan Bangunan;
-POINT PLoc;
+POINT PLoc; */
 
 
 void MAP(MATRIKS Map, int X, int Y)
@@ -11,7 +11,7 @@ void MAP(MATRIKS Map, int X, int Y)
     WriteMap(Map, X, Y);
 }
 void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLoc){
-
+    printf("yes.")
     int NBaris, NKolom; // Baris Kolom
     int MinNObjek, NObjek; // Minimal -> Maksimal Objek
     int X, Y; // Koordinat Point
@@ -62,7 +62,7 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
 }   
 /*gcc map.c point.c mesinkata.c mesin_kar.c matriks.c */
 
-int main()
+/*int main()
 {
     LoadingMap("config.txt", &Map, &Bangunan, &PLoc);
     MAP(Map, Absis(PLoc), Ordinat(PLoc));
@@ -74,12 +74,12 @@ int main()
         /*for (int i=0;i<CKata.Length;i++) {
             printf("%s",CKata.TabKata);
         */
-        printf("%s\n",CKata.TabKata); /*printf("\n");*/ 
-        ADVKATA_File();
+        /*printf("%s\n",CKata.TabKata); /*printf("\n");*/ 
+        /*ADVKATA_File();
         printf("\n");
         Command = Purify(Command);
         printf("ENTER COMMAND: ");
         SalinKata_Input(&Command); 
     }
-}
+}*/
 

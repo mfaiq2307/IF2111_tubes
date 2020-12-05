@@ -61,4 +61,7 @@ void CopyString(char *Base, char *Copycat);
 char* Cleanse(char* Kotor);
 
 boolean IsKataInt(Kata Tulisan);
+
+void StringToKata(char * Base,Kata *Fotocopy);
+
 #endif 

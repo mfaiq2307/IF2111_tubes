@@ -225,6 +225,16 @@ void CopyString(char *Base, char *Copycat){
     }
 }
 
+void StringToKata(char * Base,Kata *Fotocopy){
+    &Fotocopy = Purify(*Fotocopy);
+    int i = 0;
+    while (Base[i] != ENDSTR){
+        Fotocopy->TabKata[i] = Base[i];
+        i++;
+    }
+    Fotocopy->Length = i; 
+}
+
 boolean IsKataInt(Kata Tulisan){
     int i;
     i = 0;
