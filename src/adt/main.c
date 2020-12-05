@@ -361,7 +361,22 @@ int main(void)
                     AddAsLastElPart(&arrayshop,shop);
                     ADVKATA_File();    
                 }
+                printf("Komponen yang tersedia");
                 TulisIsiTabPart(arrayshop);
+                int pilihan;
+                int kuantitas;
+                pilihan = scanf("Komponen yang ingin dibeli :");
+                kuantitas = scanf("Masukkan jumlah yang ingin dibeli :");
+                if(kuantitas*(KataToInt(HargaPart(arrayshop,pilihan))) <= Status.Uang){
+                    int i;
+                    for(i = 1 ; i <= kuantitas; i++){
+                        SimpanPart(&T,NamaPart(arrayshop,pilihan),JenisPart(arrayshop,pilihan));
+                    }
+                    Status.Uang = Status.Uang - kuantitas*(KataToInt(HargaPart(arrayshop,pilihan)));
+                }
+                else{
+                    printf("uang tidak cukup");
+                }
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
 
