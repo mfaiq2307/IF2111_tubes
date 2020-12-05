@@ -226,7 +226,7 @@ void CopyString(char *Base, char *Copycat){
 }
 
 void StringToKata(char * Base,Kata *Fotocopy){
-    &Fotocopy = Purify(*Fotocopy);
+    PurifyProced(Fotocopy);
     int i = 0;
     while (Base[i] != ENDSTR){
         Fotocopy->TabKata[i] = Base[i];
@@ -234,7 +234,15 @@ void StringToKata(char * Base,Kata *Fotocopy){
     }
     Fotocopy->Length = i; 
 }
-
+void PurifyProced(Kata * Kotor){
+    int i = 0;
+    while (i < NMax){
+        Kotor->TabKata[i] = ENDSTR;
+        i++;
+    }
+    Kotor->Length = 0;
+    return Kotor;
+}
 boolean IsKataInt(Kata Tulisan){
     int i;
     i = 0;
