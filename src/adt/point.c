@@ -147,3 +147,40 @@ void InsertListBangunan (ListOfBangunan *L, char B, int X, int Y)
     CSimbol(*L,NBangunan(*L)) = B;
 }
 
+char SearchSymPoint(ListOfBangunan L, int x, int y){
+    POINT P;
+    P = MakePOINT(x,y);
+    int i = 0;
+    boolean found = false;
+    while((i < MaxBangunan+1) && (!found)){
+        if(EqPOINT((Point(L,i)),P)){
+            found = true;
+        }else{
+            i++;
+        }
+    }
+    if(found){
+        return CSimbol(L,i);
+    }
+    else{
+        return '0';
+    }
+}
+
+POINT SearchPoint(ListOfBangunan L, char c){
+    int i = 0;
+    boolean found = false;
+    while((i < MaxBangunan+1) && (!found)){
+        if(CSimbol(L,i) == c){
+            found = true;
+        }else{
+            i++;
+        }
+    }if(found){
+        return POINT(L,i);
+    }
+    else{
+        return MakePOINT(0,0);
+    }
+}
+
