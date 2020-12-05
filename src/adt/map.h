@@ -14,4 +14,6 @@ void MAP(MATRIKS Map, int X, int Y);
 
 void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLoc);
 
+/*gcc map.c point.c mesinkata.c mesin_kar.c matriks.c */
+
 #endif

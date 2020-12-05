@@ -1,12 +1,17 @@
 
 #include "map.h"
 
+MATRIKS Map;
+ListOfBangunan Bangunan;
+POINT PLoc;
+
+
 void MAP(MATRIKS Map, int X, int Y)
 {
     WriteMap(Map, X, Y);
 }
 void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLoc){
-    printf("Ayolah");
+
     int NBaris, NKolom; // Baris Kolom
     int MinNObjek, NObjek; // Minimal -> Maksimal Objek
     int X, Y; // Koordinat Point
@@ -14,9 +19,9 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
     int Customer = 0; // Customer ke berapa?
     int a;
     char b;
-    printf("BeforeStart");
+
     STARTKATA_File(FileMap);
-    printf("StartKata");
+
     ADVKATA_File();
 
     NBaris = KataToInt(CKata); //10
@@ -53,12 +58,28 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
             CharCustomer = IntToChar(Customer); // Ubah int(Customer) menjadi char()
             WriteBuilding (Map,CharCustomer,X,Y); // Tulis Customernya di titik X,Y di Map
         }
-    } 
+    }
 }   
+/*gcc map.c point.c mesinkata.c mesin_kar.c matriks.c */
 
-/*int main()
+int main()
 {
     LoadingMap("config.txt", &Map, &Bangunan, &PLoc);
-    MAP();
-}*/
+    MAP(Map, Absis(PLoc), Ordinat(PLoc));
+    printf("\n");
+    Kata Command;
+    printf("ENTER COMMAND: ");
+    SalinKata_Input(&Command);
+    while ((!EndKata) && (!IsStringSama(Command.TabKata,"Done"))) { 
+        /*for (int i=0;i<CKata.Length;i++) {
+            printf("%s",CKata.TabKata);
+        */
+        printf("%s\n",CKata.TabKata); /*printf("\n");*/ 
+        ADVKATA_File();
+        printf("\n");
+        Command = Purify(Command);
+        printf("ENTER COMMAND: ");
+        SalinKata_Input(&Command); 
+    }
+}
 
