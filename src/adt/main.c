@@ -3,14 +3,14 @@
 #include <string.h>
 
 /*include include file ADT */
-#include "adt/mesinkata.h"
-#include "adt/circular_queue.h"
-#include "adt/stack.h"
-#include "adt/parts.h"
-#include "adt/inventory.h"
-#include "adt/graph.h"
-#include "adt/addition.h"
-#include "adt/map.h"
+#include "mesinkata.h"
+#include "circular_queue.h"
+#include "stack.h"
+#include "parts.h"
+#include "inventory.h"
+#include "graph.h"
+#include "addition.h"
+#include "map.h"
 
 int main(void)
 {
@@ -23,7 +23,6 @@ int main(void)
     init = KataToInt(Start);
 
     if (init == 1){
-        STARTKATA_File("data/config.txt");
         /*Pembangunan Peta berdasarkan Konfigurasi */
         
         /* Deklarasi Status &
