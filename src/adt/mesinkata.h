@@ -65,7 +65,4 @@ boolean IsKataInt(Kata Tulisan);
 void StringToKata(char * Base,Kata *Fotocopy);
 
 void PurifyProced(Kata * Kotor);
-
-void SeekMARK();
-
 #endif 

@@ -107,6 +107,4 @@ char SearchSymPoint(ListOfBangunan L, int x, int y);
 
 POINT SearchPoint(ListOfBangunan L, char c);
 
-char* SymToString(char c);
-
 #endif
