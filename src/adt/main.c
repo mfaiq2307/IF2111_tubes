@@ -29,7 +29,7 @@ int main(void)
         Initialisasi Kondisi Awal Game*/
         status_t Status;
         Status.Uang = 10000;
-        Status.PlayerLoc;/*base*/
+        /*base*/
 
         /* Baris kode buat ngebangkitin order*/
         /* Baris kode buat nyimpen detail order pertama di 
