@@ -78,7 +78,7 @@ int main(void)
         /* Baris kode buat ngebangkitin order*/
 
         /* Baris kode buat inventory */
-
+        TabInventory T;
 
         Kata Command;
         printf("ENTER COMMAND: ");
@@ -268,7 +268,6 @@ int main(void)
                         }
                     if (count==8) { /* Jika telah Selesai */
                             printf("Pesanan %d telah selesai. Sialhkan antar ke pelanggan %d!\n",nomorOrder,NoPelanggan(InfoHead(Q)));
-                            Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
                         }
                     else { /*Jika belum selesai yaitu isinya belum sesuai*/
                             printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
@@ -281,15 +280,16 @@ int main(void)
 
             }
             else if(IsStringSama(Command.TabKata,"ADDCOMPONENT")){
+                int y;
                 printf("Komponen yang telah terpasang: \n");
                 PrintStack(S);
                 printf("Komponen yang tersedia: \n");
+                TulisIsiTabInventory(T);
+                printf("Komponen yang ingin dipasang: ");
+                scanf("%d",&y);
                 
-                    
-                
-            
-                    
-                
+                printf("/n");
+
             }
             else if(IsStringSama(Command.TabKata,"REMOVECOMPONENT")){
                 char X[40];
@@ -302,7 +302,7 @@ int main(void)
             else if(IsStringSama(Command.TabKata,"DELIVER")){
                 /* code */
                 Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Invoice dimasukkan ke status uang */
-                
+                Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
             }
             else if(IsStringSama(Command.TabKata,"END_DAY")){
 
