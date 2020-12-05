@@ -38,12 +38,12 @@ int main(void)
         /*Baris kode buat bikin Map */
         ListOfBangunan L; // Semua building masukin ke list
         MATRIKS Map; // Peta Gamenya
-        printf("Map");
-        LoadingMap("config.txt", &Map, &L, &Status.PlayerLoc);
+
+        LoadingMap("config.txt", &Map, &L, &Locate(Status));
         
         /*--------Pembuatan Graph------------*/ 
-        printf("MapDone");
-        
+        STARTKATA_File("config.txt");
+        SeekMARK();
         Graph G;
         CreateGraph(&G);
         int Elemen = 9; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
@@ -66,13 +66,14 @@ int main(void)
             }
             Baris++;
         }
-        printf("GraphDone");
+
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/
         Queue Q;
         int nomorOrder=1; /* Nomor Order */
         Q = CreateQueue(max);
         Order(&Q); /*Inisialisasi Order*/
+        boolean OrderAman = false;
 
         /* Deklarasi Stack */
         Stack S;
@@ -133,9 +134,23 @@ int main(void)
             }
             else if(IsStringSama(Command.TabKata,"STATUS")){
                 /* code */
+                printf("Uang tersisa: $%d\n",Status.Uang);
+                printf("Buld yang sedang dikerjakan: pesanan %d untuk pelanggan %d\n", &nomorOrder, NoPelanggan(InfoHead(Q)));
+                char SymStatus;
+                SymStatus =  SearchSymPoint(L, Absis(Locate(Status)), Ordinat(Locate(Status)));               
+                if (SymStatus == 'B'){
+                    printf("Lokasi: pemain sedang berada pada base \n");
+                }
+                else if (SymStatus == 'S'){
+                    printf("Lokasi: pemain sedang berada pada shop\n");
+                }else{
+                    printf("Lokasi: pemain sedang berada pada pelanggan %d\n", CharToInt(SymStatus));
+                }
+                printf("Inventory anda: \n");
+                TulisIsiTabInventory(T);
+            }   
 
-                
-            }
+
             else if(IsStringSama(Command.TabKata,"CHECKORDER")){
                 /* code */
                 printf("Nomor Order: %d\n",nomorOrder);
@@ -273,6 +288,7 @@ int main(void)
                             Dequeue(&Q); /*Pesanan terdepan diambil dari queue */
                             SimpanPart(&T,IntToKata(nomorOrder),IntToKata(99));
                             nomorOrder++;
+                            OrderAman = true;
                         }
                     else { /*Jika belum selesai yaitu isinya belum sesuai*/
                             printf("Komponen yang dipasangkan belum sesuai dengan pesanan, build belum dapat diselesaikan.\n");
@@ -292,7 +308,7 @@ int main(void)
                 int pilihan;
                 printf("Komponen yang ingin dipasang:");
                 scanf("%d", &pilihan);
-                pritnf("\n");
+                printf("\n");
                 int indekspart;
                 int i;
                 i = 0;
@@ -321,9 +337,17 @@ int main(void)
                 /* code */
             }
             else if(IsStringSama(Command.TabKata,"DELIVER")){
-                /* code */
-                Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Invoice dimasukkan ke status uang */
-                
+
+                char InfoIdx;
+                InfoIdx = IntToChar(NoPelanggan(InfoHead(Q)));
+                boolean CanDeliver;
+                CanDeliver = EqPOINT((Locate(Status)),SearchPoint(L,InfoIdx));
+                if(OrderAman && CanDeliver){
+                    Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Invoice dimasukkan ke status uang */
+                    OrderAman = false;
+                }else{
+                    printf("Delivery tidak dapat dilakukan ehe, mohon cek detail order anda :D");
+                }
             }
             else if(IsStringSama(Command.TabKata,"END_DAY")){
 

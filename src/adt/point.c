@@ -185,13 +185,3 @@ POINT SearchPoint(ListOfBangunan L, char c){
         return MakePOINT(0,0);
     }
 }
-
-char* SymToString(char c){
-    char a[20]; 
-    if (c == 'B'){
-        CopyString("base",a);
-    }else if( c == 'S'){
-        CopyString("shop",a);
-    }
-    return a;
-}
