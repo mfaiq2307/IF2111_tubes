@@ -22,9 +22,7 @@ int main(void)
     init = KataToInt(Start);
 
     if (init == 1){
-        printf("masuk\n");
         STARTKATA_File("data/config.txt");
-        printf("test\n");
         /*Pembangunan Peta berdasarkan Konfigurasi */
         
         /* Deklarasi Status &
@@ -45,26 +43,26 @@ int main(void)
         
         Graph G;
         CreateGraph(&G);
-        int Elemen; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
+        int Elemen = 9; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
         int index;
         /*Inserting Node dan ElmtNode*/
         for (index = 1; index <= Elemen;index++){
             InsertNode(&G,index);
         }
         MappingGraph(&G);
-
         /*Memetakan Koneksi antar Node */
         int Baris = 0;
         int Kolom = 0;
-        for(Baris = 1;Baris <= Elemen;Baris++){
-            for(Kolom = 1; Kolom <= Elemen; Kolom++){
+        while (Baris <= 9){
+            while(Kolom <= 9){
                 ADVKATA_File();
-                if (CKata.TabKata[0] == '1'){
+                if (KataToInt(CKata) == 1){
                     InsertEdge(&G,Baris,Kolom);
                 }
+                Kolom++;
             }
+            Baris++;
         }
-
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/
         Queue Q;

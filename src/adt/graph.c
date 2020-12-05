@@ -11,6 +11,10 @@ boolean YesEmpty(Graph G){
     return (First(G) == Null);
 }
 
+boolean HubEmpty(addrNode G){
+    return (Hub(G) == Null);
+}
+
 addrNode AlokNode(int I){
     Infotype P;
     Index(P) = I;
@@ -113,9 +117,7 @@ void InsertEdge(Graph *G, int I1, int I2)
     addrCon S1,S2;
     addrCon C1,C2;
     addrNode P1,P2;
-    if ((SearchNode(*G,I1) != Null) && ((SearchNode(*G,I2)) != Null)){
-
-    }else{
+    if ((SearchNode(*G,I1) == Null) && ((SearchNode(*G,I2)) == Null)){
         InsertNode(G,I1);
         InsertNode(G,I2);
     }
@@ -123,15 +125,26 @@ void InsertEdge(Graph *G, int I1, int I2)
     P2 = SearchNode(*G,I2);
     C2 = AlokCon(P1);
     C1 = AlokCon(P2);
-    S1 = Hub(P1);
-    while(S1 != Null){
-        S1 = NextC(S1);
+    if (!HubEmpty(P1)){
+        S1 = Hub(P1);
+        while(NextC(S1) != Null){
+            S1 = NextC(S1);
+        }
+        NextC(S1) = C1;
     }
-    NextC(S1) = C1;
-    while(S2 != Null){
-        S2 = NextC(S2);
+    else{
+        Hub(P1) = C1;
     }
-    NextC(S2) = C2;
+    if (!HubEmpty(P2)){
+        S2 = Hub(P2);
+        while(NextC(S2) != Null){
+            S2 = NextC(S2);
+        }
+        NextC(S2) = C2;
+    }
+    else{
+        Hub(P2) = C2;
+    }
 }
 
 /* ADT TAMBAHAN UNTUK KEPERLUAN GAME */

@@ -22,7 +22,7 @@ void IgnoreBlank_File();
 I.S.: CC sembarang 
 F.S.: CC ≠ BLANK atau CC = MARK */ 
 
-void STARTKATA_File(); 
+void STARTKATA_File(char *filename); 
 /* I.S.: CC sembarang 
 F.S.: EndKata = true, dan CC = Mark;  
 atau EndKata = false, 
