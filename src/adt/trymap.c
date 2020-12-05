@@ -22,6 +22,7 @@ void LoadingMap(char *FileMap,MATRIKS *Map,ListOfBangunan *LBangunan, POINT *PLo
     int Customer = 0; // Customer ke berapa?
 
     STARTKATA_File(FileMap);
+    ADVKATA_File();
     NBaris = KataToInt(CKata); //10
     ADVKATA_File();
     NKolom = KataToInt(CKata); //15
