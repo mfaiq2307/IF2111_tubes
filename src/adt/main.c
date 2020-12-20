@@ -42,6 +42,7 @@ int main(void)
         Status.PlayerLoc = PLOCA;
 
         LoadingMap("config.txt", &Map, &L, &PLOCA);
+        MAP(Map, Absis(PLOCA), Ordinat(PLOCA));
         EndRead();
         /*--------Pembuatan Graph------------*/ 
         printf("Masul");
@@ -53,16 +54,16 @@ int main(void)
         }
 
         Graph G;
-        CreateGraph(&G);
+        /*CreateGraph(&G);
         int Elemen = 9; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
-        int index;
+        /*int index;
         /*Inserting Node dan ElmtNode*/
-        for (index = 1; index <= Elemen;index++){
+        /*for (index = 1; index <= Elemen;index++){
             InsertNode(&G,index);
         }
         MappingGraph(&G);
         /*Memetakan Koneksi antar Node */
-        int Baris = 0;
+        /*int Baris = 0;
         int Kolom = 0;
         while (Baris <= 9){
             while(Kolom <= 9){
@@ -74,6 +75,7 @@ int main(void)
             }
             Baris++;
         }
+        */
 
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/

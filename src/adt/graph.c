@@ -117,10 +117,10 @@ void InsertEdge(Graph *G, int I1, int I2)
     addrCon S1,S2;
     addrCon C1,C2;
     addrNode P1,P2;
-    if ((SearchNode(*G,I1) == Null) && ((SearchNode(*G,I2)) == Null)){
+    /*if ((SearchNode(*G,I1) == Null) && ((SearchNode(*G,I2)) == Null)){
         InsertNode(G,I1);
         InsertNode(G,I2);
-    }
+    }*/
     P1 = SearchNode(*G,I1);
     P2 = SearchNode(*G,I2);
     C2 = AlokCon(P1);
