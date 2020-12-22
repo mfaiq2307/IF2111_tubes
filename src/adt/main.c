@@ -31,9 +31,6 @@ int main(void)
         Status.Uang = 10000;
         /*base*/
 
-        /* Baris kode buat ngebangkitin order*/
-        /* Baris kode buat nyimpen detail order pertama di 
-        Status : Status.order = ...*/
 
         /*Baris kode buat bikin Map */
         ListOfBangunan L; // Semua building masukin ke list
@@ -54,28 +51,27 @@ int main(void)
         }
 
         Graph G;
-        /*CreateGraph(&G);
+        CreateGraph(&G);
         int Elemen = 9; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
-        /*int index;
+        int index;
         /*Inserting Node dan ElmtNode*/
-        /*for (index = 1; index <= Elemen;index++){
+        for (index = 1; index <= Elemen;index++){
             InsertNode(&G,index);
         }
         MappingGraph(&G);
         /*Memetakan Koneksi antar Node */
-        /*int Baris = 0;
-        int Kolom = 0;
+        int Baris = 1;
         while (Baris <= 9){
+            int Kolom = 1;
             while(Kolom <= 9){
                 ADVKATA_File();
-                if (KataToInt(CKata) == 1){
+                if ((KataToInt(CKata) == 1) && (Baris != Kolom)){
                     InsertEdge(&G,Baris,Kolom);
                 }
                 Kolom++;
             }
             Baris++;
         }
-        */
 
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/

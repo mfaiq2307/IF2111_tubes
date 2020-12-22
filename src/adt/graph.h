@@ -67,4 +67,6 @@ boolean YesEmpty(Graph G);
 
 int SearchIndex(Graph G, char sym);
 
+void PrintGraph(Graph G);
+
 #endif

@@ -1,20 +1,32 @@
 #include <stdlib.h>
 #include "mesinkata.h"
-#include "mesinkata.c"
 #include "mesin_kar.h"
-#include "mesin_kar.c"
+#include "graph.h"
 
 
 int main() {
-    char filename[] = "config.txt"; /*test*/
-    STARTKATA_File(filename);
-    while (!EndKata) { 
-        /*for (int i=0;i<CKata.Length;i++) {
-            printf("%s",CKata.TabKata);
-        */
-        printf("%s",CKata.TabKata); /*printf("\n");*/ 
-        ADVKATA_File();
-        printf("\n");
-    } 
-    return 0; 
+    Graph G;
+    CreateGraph(&G);
+    int Elemen = 9; /*Ambil dari file Konfig Map, CKata yg ke tiga. Sekarang 9*/
+    int index;
+        /*Inserting Node dan ElmtNode*/
+    for (index = 1; index <= Elemen;index++){
+        InsertNode(&G,index);
+    }
+    MappingGraph(&G);
+    PrintGraph(G);
+    int Baris = 1;
+    while (Baris <= 9){
+        int Kolom = 1;
+        while(Kolom <= 9){
+            if ((Baris/Kolom == 0) && (Baris != Kolom)){
+                InsertEdge(&G,Baris,Kolom);
+            }
+            printf("Kolom: %d\n",Kolom);
+            Kolom++;
+        }
+        Baris++;
+        printf("Baris: %d \n",Baris);
+    }
+    PrintGraph(G);
 } 

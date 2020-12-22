@@ -199,3 +199,21 @@ int SearchIndex(Graph G, char sym){
     return IdxG;
 }
 
+void PrintGraph(Graph G){
+    printf("[");
+    if (!YesEmpty(G)) {
+        addrNode Pn = First(G);
+        addrCon Pt;
+        while (Pn != Null){
+            printf("{(%d)",Index(Info(Pn)));
+            Pt = Hub(Pn);
+            while (Pt != Null){
+                printf(",%d",Index(Info(Connect(Pt))));
+                Pt = NextC(Pt);
+            }
+            printf("}\n");
+            Pn = Next(Pn);
+        }
+    }
+    printf("]");
+}
