@@ -200,7 +200,7 @@ int SearchIndex(Graph G, char sym){
 }
 
 void PrintGraph(Graph G){
-    printf("[");
+    printf("[\n");
     if (!YesEmpty(G)) {
         addrNode Pn = First(G);
         addrCon Pt;
