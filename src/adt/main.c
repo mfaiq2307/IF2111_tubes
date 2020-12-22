@@ -43,7 +43,7 @@ int main(void)
         Status.PlayerLoc.X = Absis(PLOCA);
         Status.PlayerLoc.Y = Ordinat(PLOCA);
         /*--------Pembuatan Graph------------*/ 
-        printf("Masul");
+        printf("Masuk\n");
         
         STARTKATA_File("config.txt");
         int i = 0;
@@ -87,7 +87,7 @@ int main(void)
 
         /* Baris kode buat inventory */
         TabInventory T;
-
+        MakeInventoryEmpty(&T, 100);
         /*Input Command */
         Kata Command;
         printf("ENTER COMMAND: ");
@@ -120,22 +120,30 @@ int main(void)
                         Iterator++;
                     }
 
-                    char MoveTo;
+                    Kata Tujuan;
                     printf("Nomor tujuan: ");
-                    MoveTo = READ_Input();
-                        
+                    SalinKata_Input(&Tujuan);
+
+                    int qwe = KataToInt(Tujuan);
                     int Where = 1;
                     addrCon WayP = Hub(GPS);
-                    while (IntToChar(Where) != MoveTo){
+                    while (Where != qwe){
                         WayP = NextC(WayP);
                         Where++;
                     }
                     printf("\n");
                     char Dest = Bangunan(Info(Connect(WayP)));
-                        
-                    Locate(Status) = SearchPoint(L,Dest);
+                    printf("%c\n", Dest);    
+                    int AbsisPlayer;
+                    int OrdinatPlayer;
+            
+                    AbsisPlayer = SearchAbsis(L,Dest);
+                    OrdinatPlayer = SearchOrdinat(L,Dest);
+                    printf("%d %d", AbsisPlayer, OrdinatPlayer);
+                    Absis(Locate(Status)) = AbsisPlayer;
+                    Ordinat(Locate(Status)) = OrdinatPlayer;
 
-                    printf("Kamu telah mencapai lokasi Pelanggan %c", &Dest);
+                    printf("Kamu telah mencapai lokasi Pelanggan %c\n", Dest);
                 }
                 /* code */
             }
@@ -154,6 +162,7 @@ int main(void)
                     printf("Lokasi: pemain sedang berada pada pelanggan %d\n", CharToInt(SymStatus));
                 }
                 printf("Inventory anda: \n");
+                printf("%d\n", NeffInventory(T));
                 TulisIsiTabInventory(T);
             }   
 
@@ -345,7 +354,9 @@ int main(void)
                 ElPartType shop;
                 TabPart arrayshop;
                 MakePartEmpty(&arrayshop,30);
+                printf("Debug\n");
                 while(!IsEOP()){
+                    printf("Debug\n");
                     Kata katashop;
                     katashop=CKata;
                     ADVKATA_File();
@@ -382,7 +393,13 @@ int main(void)
                 char InfoIdx;
                 InfoIdx = IntToChar(NoPelanggan(InfoHead(Q)));
                 boolean CanDeliver;
-                CanDeliver = EqPOINT((Locate(Status)),SearchPoint(L,InfoIdx));
+                int AbsisIdx;
+                int OrdinatIdx;
+                AbsisIdx = SearchAbsis(L,InfoIdx);
+                OrdinatIdx = SearchOrdinat(L,InfoIdx);
+                POINT LokasiDelivery;
+                LokasiDelivery = MakePOINT(AbsisIdx,OrdinatIdx);
+                CanDeliver = EqPOINT((Locate(Status)),LokasiDelivery);
                 if(OrderAman && CanDeliver){
                     Status.Uang = Status.Uang + Harga(InfoHead(Q)); /* Invoice dimasukkan ke status uang */
                     OrderAman = false;

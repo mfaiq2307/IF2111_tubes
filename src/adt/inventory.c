@@ -76,18 +76,20 @@ void TulisIsiTabInventory(TabInventory T)
     /* F.S. Jika T tidak kosong: [e1,e2,...,en] */
     /* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
     /* Jika tabel kosong : menulis [] */
+    printf("debug\n");
     if (IsEmptyInventory(T))
     {
-        printf("inventory kosong");
+        printf("inventory kosong\n");
     }
     else
     {
         for (IdxInventoryType i = GetFirstIdx(T); i <= GetLastIdx(T); i++)
         {
+            printf("debug\n");
             if(BanyakInventory(T,i) != 0){
-            printf("%s. ", i);
-            printf("%s ", NamaInventory(T, i).TabKata);
-            printf("\n");
+                printf("%s. ", i);
+                printf("%s ", NamaInventory(T, i).TabKata);
+                printf("\n");
             }
             
         }

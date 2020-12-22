@@ -147,7 +147,6 @@ void InsertEdge(Graph *G, int I1, int I2)
         else{
             Hub(P2) = C2;
         }
-        printf("Insert Done");
     }
 }
 
