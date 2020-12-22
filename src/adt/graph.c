@@ -122,8 +122,8 @@ void InsertEdge(Graph *G, int I1, int I2)
         InsertNode(G,I2);
     }*/
     P1 = SearchNode(*G,I1);
-    P2 = SearchNode(*G,I2);
-    C2 = AlokCon(P1);
+    /*P2 = SearchNode(*G,I2);
+    C2 = AlokCon(P1);*/
     C1 = AlokCon(P2);
     if (!HubEmpty(P1)){
         S1 = Hub(P1);
@@ -135,6 +135,7 @@ void InsertEdge(Graph *G, int I1, int I2)
     else{
         Hub(P1) = C1;
     }
+    /*
     if (!HubEmpty(P2)){
         S2 = Hub(P2);
         while(NextC(S2) != Null){
@@ -144,7 +145,7 @@ void InsertEdge(Graph *G, int I1, int I2)
     }
     else{
         Hub(P2) = C2;
-    }
+    }*/
 }
 
 /* ADT TAMBAHAN UNTUK KEPERLUAN GAME */
