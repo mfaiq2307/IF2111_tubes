@@ -66,14 +66,14 @@ int main(void)
             int Kolom = 1;
             while(Kolom <= 9){
                 ADVKATA_File();
-                if (KataToInt(CKata) == 1){
+                if (IsStringSama(CKata.TabKata,"1")){
                     InsertEdge(&G,Baris,Kolom);
                 }
                 Kolom++;
             }
             Baris++;
         }
-        PrintGraph(G);
+        /*Tes Graph: PrintGraph(G);*/
         /* Pembuatan Queue dengan panjang max */
         int max=15; /*Jumlah maksimal antrian pesanan*/
         Queue Q;

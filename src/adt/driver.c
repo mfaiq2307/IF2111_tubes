@@ -15,6 +15,28 @@ int main() {
     }
     MappingGraph(&G);
     PrintGraph(G);
+    STARTKATA_File("config.txt");
+    int i = 0;
+    for (i = 0; i < 36;i++){
+        ADVKATA_File();
+    }
+    printf(CKata.TabKata);
+    if (IsStringSama(CKata.TabKata,"MARK")){
+        printf("MASUK DODOL\n");
+    }
+    int Baris = 1;
+    while (Baris <= 9){
+        int Kolom = 1;
+        while(Kolom <= 9){
+            ADVKATA_File();
+            if (IsStringSama(CKata.TabKata,"1")){
+                InsertEdge(&G,Baris,Kolom);
+            }
+            Kolom++;
+        }
+        Baris++;
+    }/*
+    
     int Baris = 1;
     while (Baris <= 9){
         int Kolom = 1;
@@ -27,6 +49,7 @@ int main() {
         }
         Baris++;
         printf("Baris: %d \n",Baris);
-    }
+    }*/
+
     PrintGraph(G);
 } 

@@ -122,30 +122,33 @@ void InsertEdge(Graph *G, int I1, int I2)
         InsertNode(G,I2);
     }*/
     P1 = SearchNode(*G,I1);
-    /*P2 = SearchNode(*G,I2);
-    C2 = AlokCon(P1);*/
-    C1 = AlokCon(P2);
-    if (!HubEmpty(P1)){
-        S1 = Hub(P1);
-        while(NextC(S1) != Null){
-            S1 = NextC(S1);
+    P2 = SearchNode(*G,I2);
+    if (!SearchConnection(P1,P2)){
+        C2 = AlokCon(P1);
+        C1 = AlokCon(P2);
+        if (!HubEmpty(P1)){
+            S1 = Hub(P1);
+            while(NextC(S1) != Null){
+                S1 = NextC(S1);
+            }
+            NextC(S1) = C1;
         }
-        NextC(S1) = C1;
-    }
-    else{
-        Hub(P1) = C1;
-    }
-    /*
-    if (!HubEmpty(P2)){
-        S2 = Hub(P2);
-        while(NextC(S2) != Null){
-            S2 = NextC(S2);
+        else{
+            Hub(P1) = C1;
         }
-        NextC(S2) = C2;
+        
+        if (!HubEmpty(P2)){
+            S2 = Hub(P2);
+            while(NextC(S2) != Null){
+                S2 = NextC(S2);
+            }
+            NextC(S2) = C2;
+        }
+        else{
+            Hub(P2) = C2;
+        }
+        printf("Insert Done");
     }
-    else{
-        Hub(P2) = C2;
-    }*/
 }
 
 /* ADT TAMBAHAN UNTUK KEPERLUAN GAME */
@@ -217,4 +220,17 @@ void PrintGraph(Graph G){
         }
     }
     printf("]");
+}
+
+boolean SearchConnection(addrNode Source, addrNode Dest ){
+    addrCon Pt = Hub(Source);
+    boolean found = false;
+    while((!found) && (Pt != Null)){
+        if (Connect(Pt) == Dest){
+            found = true;
+        }else{
+            Pt = NextC(Pt);
+        }
+    }
+    return found;
 }

@@ -69,4 +69,6 @@ int SearchIndex(Graph G, char sym);
 
 void PrintGraph(Graph G);
 
+boolean SearchConnection(addrNode Source, addrNode Dest );
+
 #endif
