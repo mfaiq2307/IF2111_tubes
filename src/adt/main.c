@@ -65,7 +65,7 @@ int main(void)
             int Kolom = 1;
             while(Kolom <= 9){
                 ADVKATA_File();
-                if ((KataToInt(CKata) == 1) && (Baris != Kolom)){
+                if (KataToInt(CKata) == 1){
                     InsertEdge(&G,Baris,Kolom);
                 }
                 Kolom++;
