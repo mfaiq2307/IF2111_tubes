@@ -105,6 +105,8 @@ void InsertListBangunan (ListOfBangunan *L, char B, int X, int Y);
 
 char SearchSymPoint(ListOfBangunan L, int x, int y);
 
-POINT SearchPoint(ListOfBangunan L, char c);
+int SearchAbsis(ListOfBangunan L, char c);
+
+int SearchOrdinat(ListOfBangunan L, char c);
 
 #endif

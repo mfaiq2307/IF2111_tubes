@@ -168,7 +168,7 @@ char SearchSymPoint(ListOfBangunan L, int x, int y){
     }
 }
 
-POINT SearchPoint(ListOfBangunan L, char c){
+int SearchAbsis(ListOfBangunan L, char c){
     int i = 0;
     POINT P;
     boolean found = false;
@@ -179,9 +179,27 @@ POINT SearchPoint(ListOfBangunan L, char c){
             i++;
         }
     }if(found){
-        return L.ArrayOfBuilding[i].Lokasi;
+        return (L).ArrayOfBuilding[(i)].Lokasi.X;
     }
     else{
-        return MakePOINT(0,0);
+        return 0;
+    }
+}
+
+int SearchOrdinat(ListOfBangunan L, char c){
+    int i = 0;
+    POINT P;
+    boolean found = false;
+    while((i < MaxBangunan+1) && (!found)){
+        if(CSimbol(L,i) == c){
+            found = true;
+        }else{
+            i++;
+        }
+    }if(found){
+        return (L).ArrayOfBuilding[(i)].Lokasi.Y;
+    }
+    else{
+        return 0;
     }
 }
