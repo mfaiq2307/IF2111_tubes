@@ -179,7 +179,7 @@ int SearchAbsis(ListOfBangunan L, char c){
             i++;
         }
     }if(found){
-        return (L).ArrayOfBuilding[(i)].Lokasi.X;
+        return Point(L,i).X;
     }
     else{
         return 0;
@@ -197,7 +197,7 @@ int SearchOrdinat(ListOfBangunan L, char c){
             i++;
         }
     }if(found){
-        return (L).ArrayOfBuilding[(i)].Lokasi.Y;
+        return Point(L,i).Y;
     }
     else{
         return 0;
