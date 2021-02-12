@@ -8,3 +8,5 @@ src/adt/coba2.c
 src/adt/coba2.exe
 src/a.exe
 src/a.exe
+*.exe
+src/adt/config.txt
